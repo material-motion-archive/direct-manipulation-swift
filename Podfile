@@ -1,7 +1,7 @@
-abstract_target 'MaterialMotionMaterialMotionGesturesFamily' do
-  pod 'MaterialMotionMaterialMotionGesturesFamily', :path => './'
+abstract_target 'MaterialMotionGesturesFamily' do
+  pod 'MaterialMotionGesturesFamily', :path => './'
 
-  workspace 'MaterialMotionMaterialMotionGesturesFamily.xcworkspace'
+  workspace 'MaterialMotionGesturesFamily.xcworkspace'
   use_frameworks!
 
   target "Catalog" do

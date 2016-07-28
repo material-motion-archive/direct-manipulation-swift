@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "MaterialMotionMaterialMotionGesturesFamily"
+  s.name         = "MaterialMotionGesturesFamily"
   s.summary      = "UIGestureRecognizer Material Motion Family"
   s.version      = "1.0.0"
   s.authors      = "The Material Motion Authors"
