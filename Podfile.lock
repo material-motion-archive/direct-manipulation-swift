@@ -1,0 +1,16 @@
+PODS:
+  - MaterialMotionGesturesFamily (1.0.0)
+
+DEPENDENCIES:
+  - MaterialMotionGesturesFamily (from `./`)
+
+EXTERNAL SOURCES:
+  MaterialMotionGesturesFamily:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  MaterialMotionGesturesFamily: c5be266283ee3339dcef1297e63e99295663b5ec
+
+PODFILE CHECKSUM: 99d191347f38d1c247ad6fced7947c383cab976e
+
+COCOAPODS: 1.0.1

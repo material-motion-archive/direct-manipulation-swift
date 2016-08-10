@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6117B61E9FA7BCA233E1D68C /* Pods_MaterialMotionGesturesFamily_Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0574FE78747B767EB532B38E /* Pods_MaterialMotionGesturesFamily_Catalog.framework */; };
 		666FAA841D384A6B000363DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666FAA831D384A6B000363DA /* AppDelegate.swift */; };
 		666FAA8B1D384A6B000363DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 666FAA8A1D384A6B000363DA /* Assets.xcassets */; };
 		666FAA8E1D384A6B000363DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666FAA8C1D384A6B000363DA /* LaunchScreen.storyboard */; };
+		685783D04E42CDB0A3C97CBE /* Pods_MaterialMotionGesturesFamily_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45AB0C43F17B1A05DAC2C848 /* Pods_MaterialMotionGesturesFamily_UnitTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +25,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0574FE78747B767EB532B38E /* Pods_MaterialMotionGesturesFamily_Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaterialMotionGesturesFamily_Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45AB0C43F17B1A05DAC2C848 /* Pods_MaterialMotionGesturesFamily_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaterialMotionGesturesFamily_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		666FAA801D384A6B000363DA /* Catalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		666FAA831D384A6B000363DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Catalog/AppDelegate.swift; sourceTree = "<group>"; };
 		666FAA8A1D384A6B000363DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,7 +35,30 @@
 		666FAA941D384A6B000363DA /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		666FAA9A1D384A6B000363DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../UnitTests/Info.plist; sourceTree = "<group>"; };
 		666FAAA71D384D51000363DA /* UnitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UnitTests-Bridging-Header.h"; path = "../UnitTests/UnitTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		800995BCB2C0C2446BAD7474 /* Pods-MaterialMotionGesturesFamily-Catalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionGesturesFamily-Catalog.debug.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionGesturesFamily-Catalog/Pods-MaterialMotionGesturesFamily-Catalog.debug.xcconfig"; sourceTree = "<group>"; };
+		88E71FE73F6C749B24E94280 /* Pods-MaterialMotionGesturesFamily-Catalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionGesturesFamily-Catalog.release.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionGesturesFamily-Catalog/Pods-MaterialMotionGesturesFamily-Catalog.release.xcconfig"; sourceTree = "<group>"; };
+		E2B65A2206F1D0525728FA56 /* Pods-MaterialMotionGesturesFamily-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionGesturesFamily-UnitTests.release.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionGesturesFamily-UnitTests/Pods-MaterialMotionGesturesFamily-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
+		F01EBB682515D0B8786C64DC /* Pods-MaterialMotionGesturesFamily-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionGesturesFamily-UnitTests.debug.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionGesturesFamily-UnitTests/Pods-MaterialMotionGesturesFamily-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01439CB0EEC208998A8BAC34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				685783D04E42CDB0A3C97CBE /* Pods_MaterialMotionGesturesFamily_UnitTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		303097D3DBFD70676628F169 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6117B61E9FA7BCA233E1D68C /* Pods_MaterialMotionGesturesFamily_Catalog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		666FAA771D384A6B000363DA = {
@@ -42,6 +69,8 @@
 				666FAA971D384A6B000363DA /* tests */,
 				666FAA821D384A6B000363DA /* resources */,
 				666FAA811D384A6B000363DA /* Products */,
+				A436EA9621DD85AAD3DCAA87 /* Pods */,
+				73D3F2A4BA75EE45A475F31C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +136,26 @@
 			name = catalog;
 			sourceTree = "<group>";
 		};
+		73D3F2A4BA75EE45A475F31C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0574FE78747B767EB532B38E /* Pods_MaterialMotionGesturesFamily_Catalog.framework */,
+				45AB0C43F17B1A05DAC2C848 /* Pods_MaterialMotionGesturesFamily_UnitTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A436EA9621DD85AAD3DCAA87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				800995BCB2C0C2446BAD7474 /* Pods-MaterialMotionGesturesFamily-Catalog.debug.xcconfig */,
+				88E71FE73F6C749B24E94280 /* Pods-MaterialMotionGesturesFamily-Catalog.release.xcconfig */,
+				F01EBB682515D0B8786C64DC /* Pods-MaterialMotionGesturesFamily-UnitTests.debug.xcconfig */,
+				E2B65A2206F1D0525728FA56 /* Pods-MaterialMotionGesturesFamily-UnitTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -114,8 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 666FAA9D1D384A6B000363DA /* Build configuration list for PBXNativeTarget "Catalog" */;
 			buildPhases = (
+				B0754D7F8E15D33A226EBFC8 /* [CP] Check Pods Manifest.lock */,
 				666FAA7C1D384A6B000363DA /* Sources */,
 				666FAA7E1D384A6B000363DA /* Resources */,
+				303097D3DBFD70676628F169 /* Frameworks */,
+				B68689EF47696860C765846F /* [CP] Embed Pods Frameworks */,
+				841C9BDCD97CCE144BD0BDC4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,8 +183,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 666FAAA01D384A6B000363DA /* Build configuration list for PBXNativeTarget "UnitTests" */;
 			buildPhases = (
+				4AA7F2350C6C443A5C2F1FD9 /* [CP] Check Pods Manifest.lock */,
 				666FAA901D384A6B000363DA /* Sources */,
 				666FAA921D384A6B000363DA /* Resources */,
+				01439CB0EEC208998A8BAC34 /* Frameworks */,
+				59289CEDD7675B84C2B22192 /* [CP] Embed Pods Frameworks */,
+				927BF3F57239F4B0BA91DE32 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,6 +258,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4AA7F2350C6C443A5C2F1FD9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		59289CEDD7675B84C2B22192 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../../Pods/Target Support Files/Pods-MaterialMotionGesturesFamily-UnitTests/Pods-MaterialMotionGesturesFamily-UnitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		841C9BDCD97CCE144BD0BDC4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../../Pods/Target Support Files/Pods-MaterialMotionGesturesFamily-Catalog/Pods-MaterialMotionGesturesFamily-Catalog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		927BF3F57239F4B0BA91DE32 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../../Pods/Target Support Files/Pods-MaterialMotionGesturesFamily-UnitTests/Pods-MaterialMotionGesturesFamily-UnitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0754D7F8E15D33A226EBFC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B68689EF47696860C765846F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../../Pods/Target Support Files/Pods-MaterialMotionGesturesFamily-Catalog/Pods-MaterialMotionGesturesFamily-Catalog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		666FAA7C1D384A6B000363DA /* Sources */ = {
@@ -327,6 +477,7 @@
 		};
 		666FAA9E1D384A6B000363DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 800995BCB2C0C2446BAD7474 /* Pods-MaterialMotionGesturesFamily-Catalog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Catalog/Info.plist;
@@ -339,6 +490,7 @@
 		};
 		666FAA9F1D384A6B000363DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88E71FE73F6C749B24E94280 /* Pods-MaterialMotionGesturesFamily-Catalog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Catalog/Info.plist;
@@ -352,6 +504,7 @@
 		};
 		666FAAA11D384A6B000363DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F01EBB682515D0B8786C64DC /* Pods-MaterialMotionGesturesFamily-UnitTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -368,6 +521,7 @@
 		};
 		666FAAA21D384A6B000363DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2B65A2206F1D0525728FA56 /* Pods-MaterialMotionGesturesFamily-UnitTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
