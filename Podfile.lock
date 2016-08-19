@@ -1,16 +1,28 @@
 PODS:
-  - MaterialMotionGesturesFamily (1.0.0)
+  - MaterialMotionGesturesFamily (1.0.0):
+    - MaterialMotionRuntime
+  - MaterialMotionRuntime (2.0.1)
 
 DEPENDENCIES:
   - MaterialMotionGesturesFamily (from `./`)
+  - MaterialMotionRuntime (from `https://github.com/material-motion/material-motion-runtime-objc.git`, branch `develop`)
 
 EXTERNAL SOURCES:
   MaterialMotionGesturesFamily:
     :path: "./"
+  MaterialMotionRuntime:
+    :branch: develop
+    :git: https://github.com/material-motion/material-motion-runtime-objc.git
+
+CHECKOUT OPTIONS:
+  MaterialMotionRuntime:
+    :commit: 6fd31d275d7fda65331ed170ae393de8f84f6e2f
+    :git: https://github.com/material-motion/material-motion-runtime-objc.git
 
 SPEC CHECKSUMS:
-  MaterialMotionGesturesFamily: c5be266283ee3339dcef1297e63e99295663b5ec
+  MaterialMotionGesturesFamily: 189093abb48a905905e8df0c4c50669bf099d2eb
+  MaterialMotionRuntime: 142f75ce2cf2682458aa9631541b8644b653ef34
 
-PODFILE CHECKSUM: 99d191347f38d1c247ad6fced7947c383cab976e
+PODFILE CHECKSUM: fd4829c63407d75ef7de8f16157ffc07f30c4e12
 
 COCOAPODS: 1.0.1

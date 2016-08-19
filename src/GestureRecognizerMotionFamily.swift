@@ -17,7 +17,7 @@
 import UIKit
 import MaterialMotionRuntime
 
-public typealias GestureHandler = (gesture: UIGestureRecognizer) -> Void
+public typealias GestureHandler = (_ gesture: UIGestureRecognizer) -> Void
 
 // MARK: - General gesture
 @objc public class Gesturable: NSObject, Plan {
@@ -34,9 +34,9 @@ public typealias GestureHandler = (gesture: UIGestureRecognizer) -> Void
 }
 
 private class GesturePerformer: NSObject, PlanPerforming {
-    private let target: UIView
+    fileprivate let target: UIView
 
-    required init(target: AnyObject) {
+    required init(target: Any) {
         self.target = target as! UIView
         super.init()
     }
@@ -53,7 +53,7 @@ private class GesturePerformer: NSObject, PlanPerforming {
 
 // MARK: - Block gesture
 @objc public final class BlockGesturable: Gesturable {
-    private let handler: GestureHandler
+    fileprivate let handler: GestureHandler
 
     public init(withGestureRecognizer recognizer: UIGestureRecognizer, handler: GestureHandler) {
         self.handler = handler
@@ -76,7 +76,7 @@ private final class BlockGesturePerformer: GesturePerformer {
     }
 
     private override func handle(gesture: UIGestureRecognizer) {
-        gestureHandler?(gesture: gesture)
+        gestureHandler?(gesture)
     }
 }
 
