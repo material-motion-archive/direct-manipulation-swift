@@ -55,7 +55,7 @@ private class GesturePerformer: NSObject, PlanPerforming {
 @objc public final class BlockGesturable: Gesturable {
     fileprivate let handler: GestureHandler
 
-    public init(withGestureRecognizer recognizer: UIGestureRecognizer, handler: GestureHandler) {
+    public init(withGestureRecognizer recognizer: UIGestureRecognizer, handler: @escaping GestureHandler) {
         self.handler = handler
         super.init(withGestureRecognizer: recognizer)
     }
