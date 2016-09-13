@@ -16,42 +16,42 @@
 
 import XCTest
 import MaterialMotionRuntime
-@testable import MaterialMotionGesturesFamily
+@testable import MaterialMotionDirectManipulationFamily
 
 class GestureTests: XCTestCase {
 
-    func testThatGestureAttachesToTargetView() {
-        let view = UIView()
+  func testThatGestureAttachesToTargetView() {
+    let view = UIView()
 
-        let draggable = Draggable()
+    let draggable = Draggable()
 
-        let transaction = Transaction()
-        transaction.add(plan: draggable, to: view)
+    let transaction = Transaction()
+    transaction.add(plan: draggable, to: view)
 
-        let scheduler = Scheduler()
-        scheduler.commit(transaction: transaction)
+    let scheduler = Scheduler()
+    scheduler.commit(transaction: transaction)
 
-        XCTAssert(view.gestureRecognizers?.contains(draggable.gestureRecognizer) ?? false, "View should have pan gesture attached")
+    XCTAssert(view.gestureRecognizers?.contains(draggable.panGestureRecognizer) ?? false, "View should have pan gesture attached")
+  }
+
+  func testThatMultipleGesturesAttachToTargetView() {
+    let view = UIView()
+
+    let gestures = [
+      Draggable(),
+      Draggable(),
+      Draggable()
+    ]
+
+    let transaction = Transaction()
+
+    for gesture in gestures {
+      transaction.add(plan: gesture, to: view)
     }
 
-    func testThatMultipleGesturesAttachToTargetView() {
-        let view = UIView()
+    let scheduler = Scheduler()
+    scheduler.commit(transaction: transaction)
 
-        let gestures: [Gesturable] = [
-                        Draggable(),
-                        BlockGesturable(withGestureRecognizer: UITapGestureRecognizer()) { _ in },
-                        Gesturable(withGestureRecognizer: UIPanGestureRecognizer())
-        ]
-
-        let transaction = Transaction()
-
-        for gesture in gestures {
-            transaction.add(plan: gesture, to: view)
-        }
-
-        let scheduler = Scheduler()
-        scheduler.commit(transaction: transaction)
-
-        XCTAssert(view.gestureRecognizers?.count ?? 0 == gestures.count, "View should have 3 gestures attached")
-    }
+    XCTAssert(view.gestureRecognizers?.count ?? 0 == gestures.count, "View should have 3 gestures attached")
+  }
 }

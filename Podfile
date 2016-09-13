@@ -1,8 +1,8 @@
-abstract_target 'MaterialMotionGesturesFamily' do
+abstract_target 'MaterialMotionDirectManipulationFamily' do
   pod 'MaterialMotionRuntime', :git => 'https://github.com/material-motion/material-motion-runtime-objc.git', :branch => 'develop'
-  pod 'MaterialMotionGesturesFamily', :path => './'
+  pod 'MaterialMotionDirectManipulationFamily', :path => './'
 
-  workspace 'MaterialMotionGesturesFamily.xcworkspace'
+  workspace 'MaterialMotionDirectManipulationFamily.xcworkspace'
   use_frameworks!
 
   target "Catalog" do

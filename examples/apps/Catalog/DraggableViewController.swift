@@ -15,32 +15,26 @@
  */
 
 import UIKit
-import MaterialMotionGesturesFamily
+import MaterialMotionDirectManipulationFamily
 import MaterialMotionRuntime
 
 class DraggableViewController: UIViewController {
 
-    let scheduler = Scheduler()
+  let scheduler = Scheduler()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    view.backgroundColor = UIColor.white
 
-        let draggableView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        draggableView.center = CGPoint(x: view.frame.midX, y: view.frame.midY)
-        draggableView.backgroundColor = UIColor.red
-        view.addSubview(draggableView)
+    let draggableView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+    draggableView.center = CGPoint(x: view.frame.midX, y: view.frame.midY)
+    draggableView.backgroundColor = UIColor.red
+    view.addSubview(draggableView)
 
-        let transaction = Transaction()
+    let transaction = Transaction()
 
-        let gesturable = BlockGesturable(withGestureRecognizer: UITapGestureRecognizer()) { gesture in
-            let location = gesture.location(in: gesture.view!)
-            print("tapped \(location.x), \(location.y)")
-        }
+    transaction.add(plan: Draggable(), to: draggableView)
 
-        transaction.add(plan: Draggable(), to: draggableView)
-        transaction.add(plan: gesturable, to: draggableView)
-
-        scheduler.commit(transaction: transaction)
-    }
+    scheduler.commit(transaction: transaction)
+  }
 }
