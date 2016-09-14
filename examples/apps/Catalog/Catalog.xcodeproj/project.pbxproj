@@ -12,8 +12,10 @@
 		666FAA8B1D384A6B000363DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 666FAA8A1D384A6B000363DA /* Assets.xcassets */; };
 		666FAA8E1D384A6B000363DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666FAA8C1D384A6B000363DA /* LaunchScreen.storyboard */; };
 		73D1CC614139358D78678E9F /* Pods_MaterialMotionDirectManipulationFamily_Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47AD29C808E6149118D934CA /* Pods_MaterialMotionDirectManipulationFamily_Catalog.framework */; };
-		DE0294BD1D5CE6E300A5BBA5 /* GestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0294BB1D5CE6B400A5BBA5 /* GestureTests.swift */; };
-		DE7977851D4FF53900691A95 /* DraggableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7977841D4FF53900691A95 /* DraggableViewController.swift */; };
+		DE0294BD1D5CE6E300A5BBA5 /* SimpleGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0294BB1D5CE6B400A5BBA5 /* SimpleGestureTests.swift */; };
+		DE73309F1D88A188003BBF53 /* ComposedGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE73309D1D88A14B003BBF53 /* ComposedGestureTests.swift */; };
+		DE7330A21D88BD9C003BBF53 /* TestableGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7330A01D88B9A4003BBF53 /* TestableGestureRecognizer.swift */; };
+		DE7977851D4FF53900691A95 /* DirectManipulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7977841D4FF53900691A95 /* DirectManipulationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +43,10 @@
 		797B1E98CB9449E4A6927255 /* Pods_MaterialMotionGesturesFamily_Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaterialMotionGesturesFamily_Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1C7A2F80E7D1E0F3503AFD /* Pods-MaterialMotionDirectManipulationFamily-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionDirectManipulationFamily-UnitTests.release.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulationFamily-UnitTests/Pods-MaterialMotionDirectManipulationFamily-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		DC36123760B2FCBFD565C0E7 /* Pods-MaterialMotionDirectManipulationFamily-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionDirectManipulationFamily-UnitTests.debug.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulationFamily-UnitTests/Pods-MaterialMotionDirectManipulationFamily-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DE0294BB1D5CE6B400A5BBA5 /* GestureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureTests.swift; sourceTree = "<group>"; };
-		DE7977841D4FF53900691A95 /* DraggableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableViewController.swift; sourceTree = "<group>"; };
+		DE0294BB1D5CE6B400A5BBA5 /* SimpleGestureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleGestureTests.swift; sourceTree = "<group>"; };
+		DE73309D1D88A14B003BBF53 /* ComposedGestureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposedGestureTests.swift; sourceTree = "<group>"; };
+		DE7330A01D88B9A4003BBF53 /* TestableGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestableGestureRecognizer.swift; sourceTree = "<group>"; };
+		DE7977841D4FF53900691A95 /* DirectManipulationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectManipulationViewController.swift; sourceTree = "<group>"; };
 		F3DF17AC229B9E4FE3049EC8 /* Pods-MaterialMotionDirectManipulationFamily-Catalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionDirectManipulationFamily-Catalog.release.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulationFamily-Catalog/Pods-MaterialMotionDirectManipulationFamily-Catalog.release.xcconfig"; sourceTree = "<group>"; };
 		F4B078EA77710D032C55A942 /* Pods-MaterialMotionDirectManipulationFamily-Catalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionDirectManipulationFamily-Catalog.debug.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulationFamily-Catalog/Pods-MaterialMotionDirectManipulationFamily-Catalog.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,7 +106,9 @@
 		666FAA971D384A6B000363DA /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				DE0294BB1D5CE6B400A5BBA5 /* GestureTests.swift */,
+				DE0294BB1D5CE6B400A5BBA5 /* SimpleGestureTests.swift */,
+				DE73309D1D88A14B003BBF53 /* ComposedGestureTests.swift */,
+				DE7330A01D88B9A4003BBF53 /* TestableGestureRecognizer.swift */,
 			);
 			name = tests;
 			path = ../../../tests/unit;
@@ -139,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				666FAA831D384A6B000363DA /* AppDelegate.swift */,
-				DE7977841D4FF53900691A95 /* DraggableViewController.swift */,
+				DE7977841D4FF53900691A95 /* DirectManipulationViewController.swift */,
 			);
 			name = catalog;
 			sourceTree = "<group>";
@@ -368,7 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE7977851D4FF53900691A95 /* DraggableViewController.swift in Sources */,
+				DE7977851D4FF53900691A95 /* DirectManipulationViewController.swift in Sources */,
 				666FAA841D384A6B000363DA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,7 +383,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE0294BD1D5CE6E300A5BBA5 /* GestureTests.swift in Sources */,
+				DE0294BD1D5CE6E300A5BBA5 /* SimpleGestureTests.swift in Sources */,
+				DE7330A21D88BD9C003BBF53 /* TestableGestureRecognizer.swift in Sources */,
+				DE73309F1D88A188003BBF53 /* ComposedGestureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

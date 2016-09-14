@@ -15,26 +15,16 @@
  */
 
 import UIKit
-import MaterialMotionDirectManipulationFamily
 import MaterialMotionRuntime
 
-class DraggableViewController: UIViewController {
+class TestablePanGestureRecognizer: UIPanGestureRecognizer {
+  var target: Any?
+  var action: Selector?
 
-  let scheduler = Scheduler()
+  override func addTarget(_ target: Any, action: Selector) {
+    self.target = target
+    self.action = action
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    view.backgroundColor = UIColor.white
-
-    let draggableView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-    draggableView.center = CGPoint(x: view.frame.midX, y: view.frame.midY)
-    draggableView.backgroundColor = UIColor.red
-    view.addSubview(draggableView)
-
-    let transaction = Transaction()
-
-    transaction.add(plan: Draggable(), to: draggableView)
-
-    scheduler.commit(transaction: transaction)
+    super.addTarget(target, action: action)
   }
 }
