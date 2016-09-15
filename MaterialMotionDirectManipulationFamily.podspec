@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MaterialMotionDirectManipulationFamily"
-  s.summary      = "UIGestureRecognizer Material Motion Family"
+  s.summary      = "Direct Manipulation Material Motion Family in Swift"
   s.version      = "1.0.0"
   s.authors      = "The Material Motion Authors"
   s.license      = "Apache 2.0"

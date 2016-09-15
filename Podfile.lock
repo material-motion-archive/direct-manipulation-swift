@@ -9,7 +9,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   MaterialMotionDirectManipulationFamily:
-    :path: ./
+    :path: "./"
   MaterialMotionRuntime:
     :branch: develop
     :git: https://github.com/material-motion/material-motion-runtime-objc.git
@@ -20,9 +20,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/material-motion/material-motion-runtime-objc.git
 
 SPEC CHECKSUMS:
-  MaterialMotionDirectManipulationFamily: 27cfccdd436d55e02fc25daf590ae36a4083d343
+  MaterialMotionDirectManipulationFamily: e547c763a71c47a35698deaa51ceba64757a7857
   MaterialMotionRuntime: 142f75ce2cf2682458aa9631541b8644b653ef34
 
-PODFILE CHECKSUM: afa4a1e85dafd4f88ed8519d54ce2a7eee31763f
+PODFILE CHECKSUM: 23dca2af7e74ddb9199b8ddeed5318201ed1e33c
 
 COCOAPODS: 1.0.1
