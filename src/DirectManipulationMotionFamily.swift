@@ -20,6 +20,7 @@ import MaterialMotionRuntime
 /// A plan that enables a target to be dragged.
 public final class Draggable: NSObject, Plan {
   public let panGestureRecognizer: UIPanGestureRecognizer
+  public var shouldAdjustAnchorPointOnGestureStart = false
 
   public init(withGestureRecognizer recognizer: UIPanGestureRecognizer = UIPanGestureRecognizer()) {
     self.panGestureRecognizer = recognizer
@@ -36,7 +37,7 @@ public final class Draggable: NSObject, Plan {
 }
 
 /// A gesture performer that enables its target to be dragged.
-final class DraggablePerformer: NSObject, PlanPerforming {
+final class DraggablePerformer: NSObject, PlanPerforming, ComposablePerforming {
   let target: UIView
 
   private var previousTranslation = CGPoint.zero
@@ -57,10 +58,14 @@ final class DraggablePerformer: NSObject, PlanPerforming {
     if recognizer.view == nil {
       target.addGestureRecognizer(recognizer)
     }
+
+    if plan.shouldAdjustAnchorPointOnGestureStart {
+      recognizer.addTarget(self, action: #selector(modifyAnchorPoint(using:)))
+    }
   }
 
   func handle(gesture: UIPanGestureRecognizer) {
-    var translation = gesture.translation(in: target)
+    var translation = gesture.translation(in: target.superview)
 
     if gesture.state == .began {
       previousTranslation = CGPoint.zero
@@ -71,13 +76,29 @@ final class DraggablePerformer: NSObject, PlanPerforming {
     translation.y -= previousTranslation.y
     previousTranslation = originalTranslation
 
-    target.transform = target.transform.translatedBy(x: translation.x, y: translation.y)
+    target.center.x += translation.x
+    target.center.y += translation.y
+  }
+
+  func modifyAnchorPoint(using gesture: UIGestureRecognizer) {
+    if gesture.state != .began { return }
+
+    let transaction = makeAnchorPointAdjustmentTransaction(using: gesture, on: target)
+    emitter.emit(transaction: transaction)
+  }
+
+  /// Emitter setup
+  fileprivate var emitter: TransactionEmitting!
+
+  func set(transactionEmitter: TransactionEmitting) {
+    emitter = transactionEmitter
   }
 }
 
 /// A plan that enables a target to be scaled by pinching.
 public final class Pinchable: NSObject, Plan {
   public let pinchGestureRecognizer: UIPinchGestureRecognizer
+  public var shouldAdjustAnchorPointOnGestureStart = true
 
   public init(withGestureRecognizer recognizer: UIPinchGestureRecognizer = UIPinchGestureRecognizer()) {
     self.pinchGestureRecognizer = recognizer
@@ -94,7 +115,7 @@ public final class Pinchable: NSObject, Plan {
 }
 
 /// A gesture performer that enables its target to be scaled by pinching.
-private final class PinchablePerformer: NSObject, PlanPerforming {
+private final class PinchablePerformer: NSObject, PlanPerforming, ComposablePerforming {
   let target: UIView
 
   private var previousScale: CGFloat = 1
@@ -115,6 +136,10 @@ private final class PinchablePerformer: NSObject, PlanPerforming {
     if recognizer.view == nil {
       target.addGestureRecognizer(recognizer)
     }
+
+    if plan.shouldAdjustAnchorPointOnGestureStart {
+      recognizer.addTarget(self, action: #selector(modifyAnchorPoint(using:)))
+    }
   }
 
   func handle(gesture: UIPinchGestureRecognizer) {
@@ -126,11 +151,26 @@ private final class PinchablePerformer: NSObject, PlanPerforming {
     target.transform = target.transform.scaledBy(x: newScale, y: newScale)
     previousScale = gesture.scale
   }
+
+  func modifyAnchorPoint(using gesture: UIGestureRecognizer) {
+    if gesture.state != .began { return }
+
+    let transaction = makeAnchorPointAdjustmentTransaction(using: gesture, on: target)
+    emitter.emit(transaction: transaction)
+  }
+
+  /// Emitter setup
+  fileprivate var emitter: TransactionEmitting!
+
+  func set(transactionEmitter: TransactionEmitting) {
+    emitter = transactionEmitter
+  }
 }
 
 /// A plan that enables a target to be rotated using a two-finger rotation gesture.
 public final class Rotatable: NSObject, Plan {
   public let rotationGestureRecognizer: UIRotationGestureRecognizer
+  public var shouldAdjustAnchorPointOnGestureStart = true
 
   public init(withGestureRecognizer recognizer: UIRotationGestureRecognizer = UIRotationGestureRecognizer()) {
     self.rotationGestureRecognizer = recognizer
@@ -147,7 +187,7 @@ public final class Rotatable: NSObject, Plan {
 }
 
 /// A gesture performer that enables its target to be rotated using a two-finger rotation gesture.
-private final class RotatablePerformer: NSObject, PlanPerforming {
+private final class RotatablePerformer: NSObject, PlanPerforming, ComposablePerforming {
   let target: UIView
 
   private var previousRotation: CGFloat = 0
@@ -168,11 +208,16 @@ private final class RotatablePerformer: NSObject, PlanPerforming {
     if recognizer.view == nil {
       target.addGestureRecognizer(recognizer)
     }
+
+    if plan.shouldAdjustAnchorPointOnGestureStart {
+      recognizer.addTarget(self, action: #selector(modifyAnchorPoint(using:)))
+    }
   }
 
   func handle(gesture: UIGestureRecognizer) {
     guard let gesture = gesture as? UIRotationGestureRecognizer else { return }
 
+    // Apply transform
     if gesture.state == .began {
       previousRotation = 0
     }
@@ -181,7 +226,24 @@ private final class RotatablePerformer: NSObject, PlanPerforming {
     target.transform = target.transform.rotated(by: rotation)
     previousRotation = gesture.rotation
   }
+
+  func modifyAnchorPoint(using gesture: UIGestureRecognizer) {
+    if gesture.state != .began { return }
+
+    let transaction = makeAnchorPointAdjustmentTransaction(using: gesture, on: target)
+    emitter.emit(transaction: transaction)
+  }
+
+  /// Emitter setup
+  fileprivate var emitter: TransactionEmitting!
+
+  func set(transactionEmitter: TransactionEmitting) {
+    emitter = transactionEmitter
+  }
+
 }
+
+// MARK: - Directly Manipulable
 
 /// A plan that enables its target to be dragged, pinched and rotated simultaneously.
 public final class DirectlyManipulable: NSObject, Plan {
@@ -199,15 +261,8 @@ public final class DirectlyManipulable: NSObject, Plan {
   fileprivate let pinchable: Pinchable
   fileprivate let rotatable: Rotatable
 
-  public override convenience init() {
-    self.init(draggable: Draggable(), pinchable: Pinchable(), rotatable: Rotatable())
-  }
-
-  /// A private init to assist in making copies
-  ///
-  /// Note that we can't provide defaults for the parameters,
-  /// else it will collide with the convenience init()
-  private init(draggable: Draggable, pinchable: Pinchable, rotatable: Rotatable) {
+  /// Initializes a DirectlyManipulable plan using user-provided subplans, if provided.
+  public init(draggable: Draggable = Draggable(), pinchable: Pinchable = Pinchable(), rotatable: Rotatable = Rotatable()) {
     self.draggable = draggable
     self.pinchable = pinchable
     self.rotatable = rotatable
@@ -249,18 +304,19 @@ final class DirectlyManipulablePerformer: NSObject, PlanPerforming, ComposablePe
     transaction.add(plan: plan.pinchable, to: target)
     transaction.add(plan: plan.rotatable, to: target)
 
-    // Set ourselves as each recognizer's delegate, if possible,
-    // in order to allow simultaneous recognition
     for recognizer in gestureRecognizers {
-        if recognizer.delegate == nil {
-          recognizer.delegate = self
-        }
+      // Set ourselves as each recognizer's delegate, if possible,
+      // in order to allow simultaneous recognition
+      if recognizer.delegate == nil {
+        recognizer.delegate = self
+      }
     }
 
     emitter.emit(transaction: transaction)
   }
 
-  private var emitter: TransactionEmitting!
+  /// Emitter setup
+  fileprivate var emitter: TransactionEmitting!
 
   func set(transactionEmitter: TransactionEmitting) {
     emitter = transactionEmitter
@@ -272,4 +328,65 @@ extension DirectlyManipulablePerformer: UIGestureRecognizerDelegate {
     /// Allow the performer's gesture recognizers to recognizer simultaneously
     return gestureRecognizers.contains(otherGestureRecognizer)
   }
+}
+
+// MARK: - Anchor Point Handling
+
+/// A plan that modifies the anchor point of its target
+public final class ChangeAnchorPoint: NSObject, Plan {
+  let anchorPoint: CGPoint
+
+  public init(withAnchorPoint anchorPoint: CGPoint) {
+    self.anchorPoint = anchorPoint
+    super.init()
+  }
+
+  public func performerClass() -> AnyClass {
+    return AnchorPointPerformer.self
+  }
+
+  public func copy(with zone: NSZone? = nil) -> Any {
+    return ChangeAnchorPoint(withAnchorPoint: anchorPoint)
+  }
+}
+
+private final class AnchorPointPerformer: NSObject, PlanPerforming {
+  let target: UIView
+
+  init(target: Any) {
+    self.target = target as! UIView
+    super.init()
+  }
+
+  func add(plan: Plan) {
+    guard let plan = plan as? ChangeAnchorPoint else {
+      fatalError("AnchorPointPerformer can only add ChangeAnchorPoint plans.")
+    }
+
+    let newPosition = CGPoint(x: plan.anchorPoint.x * target.layer.bounds.width,
+                              y: plan.anchorPoint.y * target.layer.bounds.height)
+
+    let positionInSuperview = target.convert(newPosition, to: target.superview)
+
+    target.layer.anchorPoint = plan.anchorPoint
+    target.layer.position = positionInSuperview
+  }
+}
+
+/// Creates and returns a Transaction consisting of a ChangeAnchorPoint plan.
+///
+/// - Parameter gestureRecognizer: Recognizer used to determine touch location
+/// - Parameter target: The view that will have its anchor point changed
+///
+/// - Returns: A Transaction consisting of a ChangeAnchorPoint plan
+private func makeAnchorPointAdjustmentTransaction(using gestureRecognizer: UIGestureRecognizer, on target: UIView) -> Transaction {
+  // Determine the new anchor point
+  let locationInView = gestureRecognizer.location(in: target)
+  let anchorPoint = CGPoint(x: locationInView.x / target.bounds.width, y: locationInView.y / target.bounds.height)
+
+  // Create a transaction around the ChangeAnchorPoint plan
+  let transaction = Transaction()
+  transaction.add(plan: ChangeAnchorPoint(withAnchorPoint: anchorPoint), to: target)
+
+  return transaction
 }
