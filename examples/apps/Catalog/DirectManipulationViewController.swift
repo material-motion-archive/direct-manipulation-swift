@@ -31,10 +31,6 @@ class DirectManipulationViewController: UIViewController {
     targetView.backgroundColor = UIColor.red
     view.addSubview(targetView)
 
-    let transaction = Transaction()
-
-    transaction.add(plan: DirectlyManipulable(), to: targetView)
-
-    scheduler.commit(transaction: transaction)
+    scheduler.addPlan(DirectlyManipulable(), to: targetView)
   }
 }

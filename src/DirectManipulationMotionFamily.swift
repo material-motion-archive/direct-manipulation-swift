@@ -47,7 +47,7 @@ final class DraggablePerformer: NSObject, PlanPerforming, ComposablePerforming {
     super.init()
   }
 
-  func add(plan: Plan) {
+  func addPlan(_ plan: Plan) {
     guard let plan = plan as? Draggable else {
       fatalError("DraggablePerformer can only add Draggable plans.")
     }
@@ -125,7 +125,7 @@ private final class PinchablePerformer: NSObject, PlanPerforming, ComposablePerf
     super.init()
   }
 
-  func add(plan: Plan) {
+  func addPlan(_ plan: Plan) {
     guard let plan = plan as? Pinchable else {
       fatalError("DraggablePerformer can only add Draggable plans.")
     }
@@ -197,7 +197,7 @@ private final class RotatablePerformer: NSObject, PlanPerforming, ComposablePerf
     super.init()
   }
 
-  func add(plan: Plan) {
+  func addPlan(_ plan: Plan) {
     guard let plan = plan as? Rotatable else {
       fatalError("RotatablePerformer can only add Rotatable plans.")
     }
@@ -288,7 +288,7 @@ final class DirectlyManipulablePerformer: NSObject, PlanPerforming, ComposablePe
     super.init()
   }
 
-  func add(plan: Plan) {
+  func addPlan(_ plan: Plan) {
     guard let plan = plan as? DirectlyManipulable else {
       fatalError("DirectlyManipulablePerformer can only add DirectlyManipulable plans.")
     }
@@ -358,7 +358,7 @@ private final class AnchorPointPerformer: NSObject, PlanPerforming {
     super.init()
   }
 
-  func add(plan: Plan) {
+  func addPlan(_ plan: Plan) {
     guard let plan = plan as? ChangeAnchorPoint else {
       fatalError("AnchorPointPerformer can only add ChangeAnchorPoint plans.")
     }

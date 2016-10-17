@@ -28,9 +28,7 @@ class SimpleGestureTests: XCTestCase {
 
     let draggable = Draggable()
 
-    let transaction = Transaction()
-    transaction.add(plan: draggable, to: view)
-    scheduler.commit(transaction: transaction)
+    scheduler.addPlan(draggable, to: view)
 
     XCTAssert(view.gestureRecognizers?.contains(draggable.panGestureRecognizer) ?? false, "View should have pan gesture recognizer attached")
   }
@@ -45,13 +43,10 @@ class SimpleGestureTests: XCTestCase {
     ]
 
     let scheduler = Scheduler()
-    let transaction = Transaction()
 
     for plan in plans {
-      transaction.add(plan: plan, to: view)
+      scheduler.addPlan(plan, to: view)
     }
-
-    scheduler.commit(transaction: transaction)
 
     XCTAssert(view.gestureRecognizers?.count ?? 0 == plans.count, "View should have 3 gesture recognizers attached")
   }
@@ -64,9 +59,7 @@ class SimpleGestureTests: XCTestCase {
 
     let scheduler = Scheduler()
 
-    let transaction = Transaction()
-    transaction.add(plan: plan, to: targetView)
-    scheduler.commit(transaction: transaction)
+    scheduler.addPlan(plan, to: targetView)
 
     guard recognizer.target is DraggablePerformer else {
       XCTFail("Pan gesture recognizer should have a DraggablePerformer target")
