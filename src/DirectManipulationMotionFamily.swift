@@ -18,11 +18,16 @@ import UIKit
 import MaterialMotionRuntime
 
 /// A plan that enables a target to be dragged.
+@objc(MDMDraggable)
 public final class Draggable: NSObject, Plan {
   public let panGestureRecognizer: UIPanGestureRecognizer
   public var shouldAdjustAnchorPointOnGestureStart = false
 
-  public init(withGestureRecognizer recognizer: UIPanGestureRecognizer = UIPanGestureRecognizer()) {
+  public convenience override init() {
+    self.init(withGestureRecognizer: UIPanGestureRecognizer())
+  }
+
+  public init(withGestureRecognizer recognizer: UIPanGestureRecognizer) {
     self.panGestureRecognizer = recognizer
     super.init()
   }
@@ -96,11 +101,16 @@ final class DraggablePerformer: NSObject, PlanPerforming, ComposablePerforming {
 }
 
 /// A plan that enables a target to be scaled by pinching.
+@objc(MDMPinchable)
 public final class Pinchable: NSObject, Plan {
   public let pinchGestureRecognizer: UIPinchGestureRecognizer
   public var shouldAdjustAnchorPointOnGestureStart = true
 
-  public init(withGestureRecognizer recognizer: UIPinchGestureRecognizer = UIPinchGestureRecognizer()) {
+  public convenience override init() {
+    self.init(withGestureRecognizer: UIPinchGestureRecognizer())
+  }
+
+  public init(withGestureRecognizer recognizer: UIPinchGestureRecognizer) {
     self.pinchGestureRecognizer = recognizer
     super.init()
   }
@@ -115,7 +125,7 @@ public final class Pinchable: NSObject, Plan {
 }
 
 /// A gesture performer that enables its target to be scaled by pinching.
-private final class PinchablePerformer: NSObject, PlanPerforming, ComposablePerforming {
+final class PinchablePerformer: NSObject, PlanPerforming, ComposablePerforming {
   let target: UIView
 
   private var previousScale: CGFloat = 1
@@ -168,11 +178,16 @@ private final class PinchablePerformer: NSObject, PlanPerforming, ComposablePerf
 }
 
 /// A plan that enables a target to be rotated using a two-finger rotation gesture.
+@objc(MDMRotatable)
 public final class Rotatable: NSObject, Plan {
   public let rotationGestureRecognizer: UIRotationGestureRecognizer
   public var shouldAdjustAnchorPointOnGestureStart = true
 
-  public init(withGestureRecognizer recognizer: UIRotationGestureRecognizer = UIRotationGestureRecognizer()) {
+  public convenience override init() {
+    self.init(withGestureRecognizer: UIRotationGestureRecognizer())
+  }
+
+  public init(withGestureRecognizer recognizer: UIRotationGestureRecognizer) {
     self.rotationGestureRecognizer = recognizer
     super.init()
   }
@@ -187,7 +202,7 @@ public final class Rotatable: NSObject, Plan {
 }
 
 /// A gesture performer that enables its target to be rotated using a two-finger rotation gesture.
-private final class RotatablePerformer: NSObject, PlanPerforming, ComposablePerforming {
+final class RotatablePerformer: NSObject, PlanPerforming, ComposablePerforming {
   let target: UIView
 
   private var previousRotation: CGFloat = 0
@@ -246,6 +261,7 @@ private final class RotatablePerformer: NSObject, PlanPerforming, ComposablePerf
 // MARK: - Directly Manipulable
 
 /// A plan that enables its target to be dragged, pinched and rotated simultaneously.
+@objc(MDMDirectlyManipulable)
 public final class DirectlyManipulable: NSObject, Plan {
   public var panGestureRecognizer: UIPanGestureRecognizer {
     return draggable.panGestureRecognizer
@@ -262,7 +278,11 @@ public final class DirectlyManipulable: NSObject, Plan {
   fileprivate let rotatable: Rotatable
 
   /// Initializes a DirectlyManipulable plan using user-provided subplans, if provided.
-  public init(draggable: Draggable = Draggable(), pinchable: Pinchable = Pinchable(), rotatable: Rotatable = Rotatable()) {
+  public convenience override init() {
+    self.init(draggable: Draggable(), pinchable: Pinchable(), rotatable: Rotatable())
+  }
+
+  public init(draggable: Draggable, pinchable: Pinchable, rotatable: Rotatable) {
     self.draggable = draggable
     self.pinchable = pinchable
     self.rotatable = rotatable
@@ -333,6 +353,7 @@ extension DirectlyManipulablePerformer: UIGestureRecognizerDelegate {
 // MARK: - Anchor Point Handling
 
 /// A plan that modifies the anchor point of its target
+@objc(MDMChangeAnchorPoint)
 public final class ChangeAnchorPoint: NSObject, Plan {
   let anchorPoint: CGPoint
 
@@ -350,7 +371,7 @@ public final class ChangeAnchorPoint: NSObject, Plan {
   }
 }
 
-private final class AnchorPointPerformer: NSObject, PlanPerforming {
+final class AnchorPointPerformer: NSObject, PlanPerforming {
   let target: UIView
 
   init(target: Any) {
