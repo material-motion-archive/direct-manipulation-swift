@@ -37,7 +37,9 @@ public final class Draggable: NSObject, Plan {
   }
 
   public func copy(with zone: NSZone? = nil) -> Any {
-    return Draggable(withGestureRecognizer: panGestureRecognizer)
+    let draggable = Draggable(withGestureRecognizer: panGestureRecognizer)
+    draggable.shouldAdjustAnchorPointOnGestureStart = shouldAdjustAnchorPointOnGestureStart
+    return draggable
   }
 }
 
@@ -120,7 +122,9 @@ public final class Pinchable: NSObject, Plan {
   }
 
   public func copy(with zone: NSZone? = nil) -> Any {
-    return Pinchable(withGestureRecognizer: pinchGestureRecognizer)
+    let pinchable = Pinchable(withGestureRecognizer: pinchGestureRecognizer)
+    pinchable.shouldAdjustAnchorPointOnGestureStart = shouldAdjustAnchorPointOnGestureStart
+    return pinchable
   }
 }
 
@@ -137,7 +141,7 @@ final class PinchablePerformer: NSObject, PlanPerforming, ComposablePerforming {
 
   func addPlan(_ plan: Plan) {
     guard let plan = plan as? Pinchable else {
-      fatalError("DraggablePerformer can only add Draggable plans.")
+      fatalError("PinchablePerformer can only add Pinchable plans.")
     }
 
     let recognizer = plan.pinchGestureRecognizer
@@ -197,7 +201,9 @@ public final class Rotatable: NSObject, Plan {
   }
 
   public func copy(with zone: NSZone? = nil) -> Any {
-    return Rotatable(withGestureRecognizer: rotationGestureRecognizer)
+    let rotatable = Rotatable(withGestureRecognizer: rotationGestureRecognizer)
+    rotatable.shouldAdjustAnchorPointOnGestureStart = shouldAdjustAnchorPointOnGestureStart
+    return rotatable
   }
 }
 

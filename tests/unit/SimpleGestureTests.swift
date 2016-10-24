@@ -58,17 +58,58 @@ class SimpleGestureTests: XCTestCase {
     let plan = Draggable(withGestureRecognizer: recognizer)
 
     let scheduler = Scheduler()
-
     scheduler.addPlan(plan, to: targetView)
 
-    guard recognizer.target is DraggablePerformer else {
+    guard recognizer.targets.first is DraggablePerformer else {
       XCTFail("Pan gesture recognizer should have a DraggablePerformer target")
       return
     }
 
     let selector = #selector(DraggablePerformer.handle(gesture:))
-    guard let action = recognizer.action, action == selector else {
+    guard recognizer.actions.contains(selector) else {
       XCTFail("Pan gesture recognizer should have an action matching 'handle(gesture:)'")
+      return
+    }
+  }
+
+  func testThatTargetActionIsAddedToRecognizerUnderPinchablePlan() {
+    let targetView = UIView()
+
+    let recognizer = TestablePinchGestureRecognizer()
+    let plan = Pinchable(withGestureRecognizer: recognizer)
+
+    let scheduler = Scheduler()
+    scheduler.addPlan(plan, to: targetView)
+
+    guard recognizer.targets.first is PinchablePerformer else {
+      XCTFail("Pinch gesture recognizer should have a PinchablePerformer target")
+      return
+    }
+
+    let selector = #selector(PinchablePerformer.handle(gesture:))
+    guard recognizer.actions.contains(selector) else {
+      XCTFail("Pinch gesture recognizer should have an action matching 'handle(gesture:)'")
+      return
+    }
+  }
+
+  func testThatTargetActionIsAddedToRecognizerUnderRotatablePlan() {
+    let targetView = UIView()
+
+    let recognizer = TestableRotationGestureRecognizer()
+    let plan = Rotatable(withGestureRecognizer: recognizer)
+
+    let scheduler = Scheduler()
+    scheduler.addPlan(plan, to: targetView)
+
+    guard recognizer.targets.first is RotatablePerformer else {
+      XCTFail("Rotation gesture recognizer should have a RotatablePerformer target")
+      return
+    }
+
+    let selector = #selector(RotatablePerformer.handle(gesture:))
+    guard recognizer.actions.contains(selector) else {
+      XCTFail("Rotation gesture recognizer should have an action matching 'handle(gesture:)'")
       return
     }
   }
