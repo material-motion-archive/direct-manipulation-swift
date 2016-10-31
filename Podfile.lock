@@ -9,7 +9,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   MaterialMotionDirectManipulationFamily:
-    :path: ./
+    :path: "./"
 
 SPEC CHECKSUMS:
   MaterialMotionDirectManipulationFamily: 5c4e71a9adddea0b704f6e54a5707dbd20278316
@@ -17,4 +17,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 06eea88950656fc1ab4f35bce0269a517172e959
 
-COCOAPODS: 1.1.0
+COCOAPODS: 1.1.1
