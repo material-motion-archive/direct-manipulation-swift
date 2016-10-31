@@ -33,6 +33,17 @@ class SimpleGestureTests: XCTestCase {
     XCTAssert(view.gestureRecognizers?.contains(draggable.panGestureRecognizer) ?? false, "View should have pan gesture recognizer attached")
   }
 
+  func testThatUserInteractionIsEnabled() {
+    let view = UIView()
+    view.isUserInteractionEnabled = false
+
+    let scheduler = Scheduler()
+
+    scheduler.addPlan(Draggable(), to: view)
+
+    XCTAssertTrue(view.isUserInteractionEnabled)
+  }
+
   func testThatMultiplePlansAttachRecognizersToTargetView() {
     let view = UIView()
 

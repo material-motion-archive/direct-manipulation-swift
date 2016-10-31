@@ -17,7 +17,11 @@
 import UIKit
 import MaterialMotionRuntime
 
-/// A plan that enables a target to be dragged.
+/**
+ A plan that enables a target to be dragged.
+
+ Enables isUserInteractionEnabled on the target view.
+ */
 @objc(MDMDraggable)
 public final class Draggable: NSObject, Plan {
   public let panGestureRecognizer: UIPanGestureRecognizer
@@ -51,6 +55,7 @@ final class DraggablePerformer: NSObject, PlanPerforming, ComposablePerforming {
 
   required init(target: Any) {
     self.target = target as! UIView
+    self.target.isUserInteractionEnabled = true
     super.init()
   }
 
@@ -102,7 +107,11 @@ final class DraggablePerformer: NSObject, PlanPerforming, ComposablePerforming {
   }
 }
 
-/// A plan that enables a target to be scaled by pinching.
+/**
+ A plan that enables a target to be scaled by pinching.
+
+ Enables isUserInteractionEnabled on the target view.
+ */
 @objc(MDMPinchable)
 public final class Pinchable: NSObject, Plan {
   public let pinchGestureRecognizer: UIPinchGestureRecognizer
@@ -136,6 +145,7 @@ final class PinchablePerformer: NSObject, PlanPerforming, ComposablePerforming {
 
   required init(target: Any) {
     self.target = target as! UIView
+    self.target.isUserInteractionEnabled = true
     super.init()
   }
 
@@ -181,7 +191,11 @@ final class PinchablePerformer: NSObject, PlanPerforming, ComposablePerforming {
   }
 }
 
-/// A plan that enables a target to be rotated using a two-finger rotation gesture.
+/**
+ A plan that enables a target to be rotated using a two-finger rotation gesture.
+
+ Enables isUserInteractionEnabled on the target view.
+ */
 @objc(MDMRotatable)
 public final class Rotatable: NSObject, Plan {
   public let rotationGestureRecognizer: UIRotationGestureRecognizer
@@ -215,6 +229,7 @@ final class RotatablePerformer: NSObject, PlanPerforming, ComposablePerforming {
 
   required init(target: Any) {
     self.target = target as! UIView
+    self.target.isUserInteractionEnabled = true
     super.init()
   }
 
@@ -266,7 +281,11 @@ final class RotatablePerformer: NSObject, PlanPerforming, ComposablePerforming {
 
 // MARK: - Directly Manipulable
 
-/// A plan that enables its target to be dragged, pinched and rotated simultaneously.
+/**
+ A plan that enables its target to be dragged, pinched and rotated simultaneously.
+
+ Enables isUserInteractionEnabled on the target view.
+ */
 @objc(MDMDirectlyManipulable)
 public final class DirectlyManipulable: NSObject, Plan {
   public var panGestureRecognizer: UIPanGestureRecognizer {
@@ -311,6 +330,7 @@ final class DirectlyManipulablePerformer: NSObject, PlanPerforming, ComposablePe
 
   required init(target: Any) {
     self.target = target as! UIView
+    self.target.isUserInteractionEnabled = true
     super.init()
   }
 
