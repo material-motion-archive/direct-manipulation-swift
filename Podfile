@@ -1,5 +1,6 @@
 abstract_target 'MaterialMotionDirectManipulationFamily' do
   pod 'MaterialMotionRuntime'
+  pod 'CatalogByConvention'
 
   pod 'MaterialMotionDirectManipulationFamily', :path => './'
 
