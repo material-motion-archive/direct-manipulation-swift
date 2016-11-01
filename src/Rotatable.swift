@@ -35,7 +35,7 @@ public final class Rotatable: NSObject, Plan {
    */
   public var shouldAdjustAnchorPointOnGestureStart = true
 
-  /** Creates a plan with a new pinch gesture recognizer. */
+  /** Creates a plan with a new rotation gesture recognizer. */
   public convenience override init() {
     self.init(withGestureRecognizer: UIRotationGestureRecognizer())
   }
