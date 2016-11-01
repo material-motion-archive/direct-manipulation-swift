@@ -34,15 +34,15 @@ final class DirectlyManipulablePerformer: NSObject, PlanPerforming, ComposablePe
     }
 
     gestureRecognizers = [
-      plan.draggable.panGestureRecognizer,
-      plan.pinchable.pinchGestureRecognizer,
-      plan.rotatable.rotationGestureRecognizer
+      plan.panGestureRecognizer,
+      plan.pinchGestureRecognizer,
+      plan.rotationGestureRecognizer
     ]
 
     let transaction = Transaction()
-    transaction.add(plan: plan.draggable, to: target)
-    transaction.add(plan: plan.pinchable, to: target)
-    transaction.add(plan: plan.rotatable, to: target)
+    transaction.add(plan: Draggable(withGestureRecognizer: plan.panGestureRecognizer), to: target)
+    transaction.add(plan: Pinchable(withGestureRecognizer: plan.pinchGestureRecognizer), to: target)
+    transaction.add(plan: Rotatable(withGestureRecognizer: plan.rotationGestureRecognizer), to: target)
 
     for recognizer in gestureRecognizers {
       // Set ourselves as each recognizer's delegate, if possible,

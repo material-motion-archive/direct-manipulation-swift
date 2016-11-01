@@ -49,9 +49,10 @@
 
 - (void)testThatDirectlyManipulablePlansCanBeCreated {
   __unused MDMDirectlyManipulable *directlyManipulable = [[MDMDirectlyManipulable alloc] init];
-  __unused MDMDirectlyManipulable *directlyManipulableWithGesture = [[MDMDirectlyManipulable alloc] initWithDraggable:[[MDMDraggable alloc] init]
-                                                                                                            pinchable:[[MDMPinchable alloc] init]
-                                                                                                            rotatable:[[MDMRotatable alloc] init]];
+  __unused MDMDirectlyManipulable *directlyManipulableWithGesture =
+      [[MDMDirectlyManipulable alloc] initWithPanGestureRecognizer:[UIPanGestureRecognizer new]
+                                            pinchGestureRecognizer:[UIPinchGestureRecognizer new]
+                                         rotationGestureRecognizer:[UIRotationGestureRecognizer new]];
 }
 
 - (void)testThatChangeAnchorPointPlansCanBeCreated {
