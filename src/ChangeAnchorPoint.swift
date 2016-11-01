@@ -17,11 +17,28 @@
 import UIKit
 import MaterialMotionRuntime
 
-/// A plan that modifies the anchor point of its target
+/**
+ Modifies the anchor point of a target while maintaining the view/layer's current
+ visible frame.
+
+ Supported target types: UIView, CALayer.
+ */
 @objc(MDMChangeAnchorPoint)
 public final class ChangeAnchorPoint: NSObject, Plan {
+
+  /**
+   The new anchor point, expressed in the [0,1] range for each x and y value.
+
+   0 corresponds to the min value of the bounds' corresponding axis.
+   1 corresponds to the max value of the bounds' corresponding axis.
+   */
   let anchorPoint: CGPoint
 
+  /**
+   Initialize the plan object with an anchor point.
+
+   See the anchorPoint documentation for an explanation of the expected value range.
+   */
   public init(withAnchorPoint anchorPoint: CGPoint) {
     self.anchorPoint = anchorPoint
     super.init()
