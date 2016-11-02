@@ -1,0 +1,23 @@
+PODS:
+  - CatalogByConvention (2.0.0)
+  - MaterialMotionDirectManipulationFamily (1.0.0):
+    - MaterialMotionRuntime (~> 5.0)
+  - MaterialMotionRuntime (5.0.0)
+
+DEPENDENCIES:
+  - CatalogByConvention
+  - MaterialMotionDirectManipulationFamily (from `./`)
+  - MaterialMotionRuntime
+
+EXTERNAL SOURCES:
+  MaterialMotionDirectManipulationFamily:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  CatalogByConvention: be55c2263132e4f9f59299ac8a528ee8715b3275
+  MaterialMotionDirectManipulationFamily: 6f8aa7ed6d51befd5eb6caa21817d6c17943961d
+  MaterialMotionRuntime: 620695e40aaf12f728342cef0b784b1d3eaa1125
+
+PODFILE CHECKSUM: 9103685dd4a7cb2c3f2ddbb3dc20de80f8e57c86
+
+COCOAPODS: 1.1.1

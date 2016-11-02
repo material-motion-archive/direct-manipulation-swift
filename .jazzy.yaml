@@ -1,7 +1,10 @@
-module: MaterialMotionMaterialMotionGesturesFamily
+module: MaterialMotionDirectManipulationFamily
 module_version: 1.0.0
-umbrella_header: src/MaterialMotionMaterialMotionGesturesFamily.h
-objc: true
 sdk: iphonesimulator
-github_url: https://github.com/material-motion/material-motion-family-gestures-swift
-github_file_prefix: https://github.com/material-motion/material-motion-family-gestures-swift/tree/v1.0.0
+xcodebuild_arguments:
+  - -workspace
+  - MaterialMotionDirectManipulationFamily.xcworkspace
+  - -scheme
+  - MaterialMotionDirectManipulationFamily
+github_url: https://github.com/material-motion/material-motion-family-direct-manipulation-swift
+github_file_prefix: https://github.com/material-motion/material-motion-family-direct-manipulation-swift/tree/v1.0.0

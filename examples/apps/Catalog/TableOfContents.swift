@@ -14,4 +14,10 @@
  limitations under the License.
  */
 
-// TODO: Import public headers.
+// MARK: Catalog by convention
+
+extension DirectManipulationViewController {
+  class func catalogBreadcrumbs() -> [String] {
+    return ["1. Direct manipulation"]
+  }
+}
