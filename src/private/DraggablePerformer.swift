@@ -52,7 +52,7 @@ final class DraggablePerformer: NSObject, ComposablePerforming {
       previousTranslation = CGPoint.zero
     }
 
-    var originalTranslation = translation
+    let originalTranslation = translation
     translation.x -= previousTranslation.x
     translation.y -= previousTranslation.y
     previousTranslation = originalTranslation

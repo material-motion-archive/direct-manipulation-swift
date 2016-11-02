@@ -17,7 +17,7 @@
 import UIKit
 import MaterialMotionRuntime
 
-final class AnchorPointPerformer: NSObject, PlanPerforming {
+final class AnchorPointPerformer: NSObject, Performing {
   let target: UIView
 
   init(target: Any) {
