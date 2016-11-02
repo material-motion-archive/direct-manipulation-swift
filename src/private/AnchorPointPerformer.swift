@@ -48,14 +48,10 @@ final class AnchorPointPerformer: NSObject, PlanPerforming {
 
  - Returns: A Transaction consisting of a ChangeAnchorPoint plan
  */
-func makeAnchorPointAdjustmentTransaction(using gestureRecognizer: UIGestureRecognizer, on target: UIView) -> Transaction {
+func makeAnchorPointAdjustment(using gestureRecognizer: UIGestureRecognizer, on target: UIView) -> ChangeAnchorPoint {
   // Determine the new anchor point
   let locationInView = gestureRecognizer.location(in: target)
   let anchorPoint = CGPoint(x: locationInView.x / target.bounds.width, y: locationInView.y / target.bounds.height)
 
-  // Create a transaction around the ChangeAnchorPoint plan
-  let transaction = Transaction()
-  transaction.add(plan: ChangeAnchorPoint(withAnchorPoint: anchorPoint), to: target)
-
-  return transaction
+  return ChangeAnchorPoint(withAnchorPoint: anchorPoint)
 }

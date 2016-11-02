@@ -17,7 +17,7 @@
 import UIKit
 import MaterialMotionRuntime
 
-final class RotatablePerformer: NSObject, PlanPerforming, ComposablePerforming {
+final class RotatablePerformer: NSObject, ComposablePerforming {
   let target: UIView
 
   private var previousRotation: CGFloat = 0
@@ -61,14 +61,11 @@ final class RotatablePerformer: NSObject, PlanPerforming, ComposablePerforming {
   func modifyAnchorPoint(using gesture: UIGestureRecognizer) {
     if gesture.state != .began { return }
 
-    let transaction = makeAnchorPointAdjustmentTransaction(using: gesture, on: target)
-    emitter.emit(transaction: transaction)
+    emitter.emitPlan(makeAnchorPointAdjustment(using: gesture, on: target))
   }
 
-  /// Emitter setup
-  fileprivate var emitter: TransactionEmitting!
-
-  func set(transactionEmitter: TransactionEmitting) {
-    emitter = transactionEmitter
+  var emitter: PlanEmitting!
+  func setPlanEmitter(_ planEmitter: PlanEmitting) {
+    emitter = planEmitter
   }
 }

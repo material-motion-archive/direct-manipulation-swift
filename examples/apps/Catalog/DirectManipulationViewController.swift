@@ -20,7 +20,7 @@ import MaterialMotionRuntime
 
 class DirectManipulationViewController: UIViewController {
 
-  let scheduler = Scheduler()
+  let runtime = Runtime()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,6 +31,6 @@ class DirectManipulationViewController: UIViewController {
     targetView.backgroundColor = UIColor.red
     view.addSubview(targetView)
 
-    scheduler.addPlan(DirectlyManipulable(), to: targetView)
+    runtime.addPlan(DirectlyManipulable(), to: targetView)
   }
 }

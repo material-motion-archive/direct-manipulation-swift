@@ -17,7 +17,7 @@
 import UIKit
 import MaterialMotionRuntime
 
-final class DirectlyManipulablePerformer: NSObject, PlanPerforming, ComposablePerforming {
+final class DirectlyManipulablePerformer: NSObject, ComposablePerforming {
   let target: UIView
 
   fileprivate var gestureRecognizers: [UIGestureRecognizer] = []
@@ -39,11 +39,6 @@ final class DirectlyManipulablePerformer: NSObject, PlanPerforming, ComposablePe
       plan.rotationGestureRecognizer
     ]
 
-    let transaction = Transaction()
-    transaction.add(plan: Draggable(withGestureRecognizer: plan.panGestureRecognizer), to: target)
-    transaction.add(plan: Pinchable(withGestureRecognizer: plan.pinchGestureRecognizer), to: target)
-    transaction.add(plan: Rotatable(withGestureRecognizer: plan.rotationGestureRecognizer), to: target)
-
     for recognizer in gestureRecognizers {
       // Set ourselves as each recognizer's delegate, if possible,
       // in order to allow simultaneous recognition
@@ -52,14 +47,14 @@ final class DirectlyManipulablePerformer: NSObject, PlanPerforming, ComposablePe
       }
     }
 
-    emitter.emit(transaction: transaction)
+    emitter.emitPlan(Draggable(withGestureRecognizer: plan.panGestureRecognizer))
+    emitter.emitPlan(Pinchable(withGestureRecognizer: plan.pinchGestureRecognizer))
+    emitter.emitPlan(Rotatable(withGestureRecognizer: plan.rotationGestureRecognizer))
   }
 
-  /// Emitter setup
-  fileprivate var emitter: TransactionEmitting!
-
-  func set(transactionEmitter: TransactionEmitting) {
-    emitter = transactionEmitter
+  var emitter: PlanEmitting!
+  func setPlanEmitter(_ planEmitter: PlanEmitting) {
+    emitter = planEmitter
   }
 }
 
