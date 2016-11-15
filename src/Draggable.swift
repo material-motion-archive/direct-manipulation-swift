@@ -29,12 +29,6 @@ public final class Draggable: NSObject, Plan {
   /** The gesture recognizer whose events will be observed. */
   public let panGestureRecognizer: UIPanGestureRecognizer
 
-  /**
-   Whether or not the target's anchorPoint should be modified each time the gesture recognizer
-   begins.
-   */
-  public var shouldAdjustAnchorPointOnGestureStart = false
-
   /** Creates a plan with a new pan gesture recognizer. */
   public convenience override init() {
     self.init(withGestureRecognizer: UIPanGestureRecognizer())
@@ -57,6 +51,13 @@ public final class Draggable: NSObject, Plan {
     draggable.shouldAdjustAnchorPointOnGestureStart = shouldAdjustAnchorPointOnGestureStart
     return draggable
   }
+
+  /**
+   Whether or not the target's anchorPoint should be modified each time the gesture recognizer
+   begins.
+   */
+  @available(*, deprecated, message: "Emit a ChangeAnchorPoint plan instead. Deprecated in v1.1.0.")
+  public var shouldAdjustAnchorPointOnGestureStart = false
 }
 
 extension Draggable: Gesturable {
