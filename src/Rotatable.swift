@@ -48,7 +48,7 @@ public final class Rotatable: NSObject, Plan {
 
   /** The performer that will fulfill this plan. */
   public func performerClass() -> AnyClass {
-    return RotatablePerformer.self
+    return GesturePerformer.self
   }
 
   /** Returns a copy of this plan. */
@@ -56,5 +56,13 @@ public final class Rotatable: NSObject, Plan {
     let rotatable = Rotatable(withGestureRecognizer: rotationGestureRecognizer)
     rotatable.shouldAdjustAnchorPointOnGestureStart = shouldAdjustAnchorPointOnGestureStart
     return rotatable
+  }
+}
+
+extension Rotatable: Gesturable {
+  var gestureRecognizer: UIGestureRecognizer {
+    get {
+      return rotationGestureRecognizer
+    }
   }
 }

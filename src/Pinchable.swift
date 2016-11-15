@@ -49,7 +49,7 @@ public final class Pinchable: NSObject, Plan {
 
   /** The performer that will fulfill this plan. */
   public func performerClass() -> AnyClass {
-    return PinchablePerformer.self
+    return GesturePerformer.self
   }
 
   /** Returns a copy of this plan. */
@@ -57,5 +57,13 @@ public final class Pinchable: NSObject, Plan {
     let pinchable = Pinchable(withGestureRecognizer: pinchGestureRecognizer)
     pinchable.shouldAdjustAnchorPointOnGestureStart = shouldAdjustAnchorPointOnGestureStart
     return pinchable
+  }
+}
+
+extension Pinchable: Gesturable {
+  var gestureRecognizer: UIGestureRecognizer {
+    get {
+      return pinchGestureRecognizer
+    }
   }
 }

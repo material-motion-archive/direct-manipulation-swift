@@ -48,7 +48,7 @@ public final class Draggable: NSObject, Plan {
 
   /** The performer that will fulfill this plan. */
   public func performerClass() -> AnyClass {
-    return DraggablePerformer.self
+    return GesturePerformer.self
   }
 
   /** Returns a copy of this plan. */
@@ -56,5 +56,13 @@ public final class Draggable: NSObject, Plan {
     let draggable = Draggable(withGestureRecognizer: panGestureRecognizer)
     draggable.shouldAdjustAnchorPointOnGestureStart = shouldAdjustAnchorPointOnGestureStart
     return draggable
+  }
+}
+
+extension Draggable: Gesturable {
+  var gestureRecognizer: UIGestureRecognizer {
+    get {
+      return panGestureRecognizer
+    }
   }
 }
