@@ -1,6 +1,6 @@
 PODS:
   - CatalogByConvention (2.0.0)
-  - MaterialMotionDirectManipulation (1.0.0):
+  - MaterialMotionDirectManipulation (1.1.0):
     - MaterialMotionRuntime (< 7.0, >= 5.0)
   - MaterialMotionRuntime (6.0.0)
 
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CatalogByConvention: be55c2263132e4f9f59299ac8a528ee8715b3275
-  MaterialMotionDirectManipulation: '08da376c77ad0aa87609d56586d7d734a278cd60'
+  MaterialMotionDirectManipulation: e02ef29f4eb81cbe68db21b97d23d95a9833150b
   MaterialMotionRuntime: 89cb395df1ce02134fc67a16b42dc4492b6c514c
 
 PODFILE CHECKSUM: 1c93b3b7e353aad73bc9fe25d122a4fc819e72e1
