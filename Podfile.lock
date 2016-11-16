@@ -1,13 +1,13 @@
 PODS:
   - CatalogByConvention (2.0.0)
   - MaterialMotionDirectManipulation (1.0.0):
-    - MaterialMotionRuntime (~> 5.0)
-  - MaterialMotionRuntime (5.0.0)
+    - MaterialMotionRuntime (< 7.0, >= 5.0)
+  - MaterialMotionRuntime (6.0.0)
 
 DEPENDENCIES:
   - CatalogByConvention
   - MaterialMotionDirectManipulation (from `./`)
-  - MaterialMotionRuntime (~> 5.0)
+  - MaterialMotionRuntime (~> 6.0)
 
 EXTERNAL SOURCES:
   MaterialMotionDirectManipulation:
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CatalogByConvention: be55c2263132e4f9f59299ac8a528ee8715b3275
-  MaterialMotionDirectManipulation: 67314732b304f4bcc0b492c816d0059a8ff3ca69
-  MaterialMotionRuntime: 620695e40aaf12f728342cef0b784b1d3eaa1125
+  MaterialMotionDirectManipulation: '08da376c77ad0aa87609d56586d7d734a278cd60'
+  MaterialMotionRuntime: 89cb395df1ce02134fc67a16b42dc4492b6c514c
 
-PODFILE CHECKSUM: ce15e0a83d828388f639ecf32bbec0371853ec82
+PODFILE CHECKSUM: 1c93b3b7e353aad73bc9fe25d122a4fc819e72e1
 
 COCOAPODS: 1.1.1
