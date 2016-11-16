@@ -19,9 +19,9 @@ This library consists of the following plans:
 The `Draggable`, `Pinchable`, and `Rotatable` plans allow a user to move, scale, and rotate a view.
 They each listen for deltas emitted by a gesture recognizer and add them to the target.
 
-If a view can be dragged then it can often be pinched and rotated too. To make this easy, we provide
-a `DirectlyManipulable` plan. It's equivalent to individually adding `Draggable`, `Pinchable`, and
-`Rotatable` to the same target.
+If a view can be dragged then it can sometimes be pinched and rotated too. To make this easy, we
+provide a `DirectlyManipulable` plan. It's equivalent to individually adding `Draggable`,
+`Pinchable`, and `Rotatable` to the same target.
 
 The collection of `Draggable`, `Pinchable`, `Rotatable`, and `DirectlyManipulable` represent traits
 that can describe behavior of a target view. When any of these traits are added to a view the view's
