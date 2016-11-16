@@ -28,10 +28,8 @@ that can describe behavior of a target view. When any of these traits are added 
 `isUserInteractionEnabled` is enabled. If the plan's associated gesture recognizer is not yet
 associated with a view then the gesture recognizer will be added to the target view.
 
-`ChangeAnchorPoint` adjusts `view.layer.anchorPoint` while maintaining the same `view.frame`. In
-practice you will not use this plan directly because `Draggable`, `Pinchable`, and `Rotatable` each
-provide the `shouldAdjustAnchorPointOnGestureStart` property for automatically emitting a
-ChangeAnchorPoint instance.
+`ChangeAnchorPoint` adjusts `view.layer.anchorPoint` while maintaining the same `view.frame`. This
+plan is emitted by `DirectlyManipulable` when a gesture recognizer begins.
 
 ## Installation
 
