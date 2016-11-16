@@ -30,12 +30,6 @@ public final class Pinchable: NSObject, Plan {
   /** The gesture recognizer whose events will be observed. */
   public let pinchGestureRecognizer: UIPinchGestureRecognizer
 
-  /**
-   Whether or not the target's anchorPoint should be modified each time the gesture
-   recognizer begins.
-   */
-  public var shouldAdjustAnchorPointOnGestureStart = true
-
   /** Creates a plan with a new pinch gesture recognizer. */
   public convenience override init() {
     self.init(withGestureRecognizer: UIPinchGestureRecognizer())
@@ -49,7 +43,7 @@ public final class Pinchable: NSObject, Plan {
 
   /** The performer that will fulfill this plan. */
   public func performerClass() -> AnyClass {
-    return PinchablePerformer.self
+    return GesturePerformer.self
   }
 
   /** Returns a copy of this plan. */
@@ -57,5 +51,20 @@ public final class Pinchable: NSObject, Plan {
     let pinchable = Pinchable(withGestureRecognizer: pinchGestureRecognizer)
     pinchable.shouldAdjustAnchorPointOnGestureStart = shouldAdjustAnchorPointOnGestureStart
     return pinchable
+  }
+
+  /**
+   Whether or not the target's anchorPoint should be modified each time the gesture recognizer
+   begins.
+   */
+  @available(*, deprecated, message: "Emit a ChangeAnchorPoint plan instead. Deprecated in v1.1.0.")
+  public var shouldAdjustAnchorPointOnGestureStart = true
+}
+
+extension Pinchable: Gesturable {
+  var gestureRecognizer: UIGestureRecognizer {
+    get {
+      return pinchGestureRecognizer
+    }
   }
 }

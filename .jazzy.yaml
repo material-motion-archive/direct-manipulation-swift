@@ -1,10 +1,10 @@
-module: MaterialMotionDirectManipulationFamily
-module_version: 1.0.0
+module: MaterialMotionDirectManipulation
+module_version: 1.1.0
 sdk: iphonesimulator
 xcodebuild_arguments:
   - -workspace
-  - MaterialMotionDirectManipulationFamily.xcworkspace
+  - MaterialMotionDirectManipulation.xcworkspace
   - -scheme
-  - MaterialMotionDirectManipulationFamily
-github_url: https://github.com/material-motion/material-motion-family-direct-manipulation-swift
-github_file_prefix: https://github.com/material-motion/material-motion-family-direct-manipulation-swift/tree/v1.0.0
+  - MaterialMotionDirectManipulation
+github_url: https://github.com/material-motion/direct-manipulation-swift
+github_file_prefix: https://github.com/material-motion/direct-manipulation-swift/tree/v1.1.0

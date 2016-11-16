@@ -1,7 +1,7 @@
-# Direct Manipulation Material Motion Family in Swift
+# Direct Manipulation for Material Motion (Swift)
 
-[![Build Status](https://travis-ci.org/material-motion/material-motion-family-direct-manipulation-swift.svg?branch=develop)](https://travis-ci.org/material-motion/material-motion-family-direct-manipulation-swift)
-[![codecov](https://codecov.io/gh/material-motion/material-motion-family-direct-manipulation-swift/branch/develop/graph/badge.svg)](https://codecov.io/gh/material-motion/material-motion-family-direct-manipulation-swift)
+[![Build Status](https://travis-ci.org/material-motion/direct-manipulation-swift.svg?branch=develop)](https://travis-ci.org/material-motion/direct-manipulation-swift)
+[![codecov](https://codecov.io/gh/material-motion/direct-manipulation-swift/branch/develop/graph/badge.svg)](https://codecov.io/gh/material-motion/direct-manipulation-swift)
 
 ## Supported languages
 
@@ -19,19 +19,17 @@ This library consists of the following plans:
 The `Draggable`, `Pinchable`, and `Rotatable` plans allow a user to move, scale, and rotate a view.
 They each listen for deltas emitted by a gesture recognizer and add them to the target.
 
-If a view can be dragged then it can often be pinched and rotated too. To make this easy, we provide
-a `DirectlyManipulable` plan. It's equivalent to individually adding `Draggable`, `Pinchable`, and
-`Rotatable` to the same target.
+If a view can be dragged then it can sometimes be pinched and rotated too. To make this easy, we
+provide a `DirectlyManipulable` plan. It's equivalent to individually adding `Draggable`,
+`Pinchable`, and `Rotatable` to the same target.
 
 The collection of `Draggable`, `Pinchable`, `Rotatable`, and `DirectlyManipulable` represent traits
 that can describe behavior of a target view. When any of these traits are added to a view the view's
 `isUserInteractionEnabled` is enabled. If the plan's associated gesture recognizer is not yet
 associated with a view then the gesture recognizer will be added to the target view.
 
-`ChangeAnchorPoint` adjusts `view.layer.anchorPoint` while maintaining the same `view.frame`. In
-practice you will not use this plan directly because `Draggable`, `Pinchable`, and `Rotatable` each
-provide the `shouldAdjustAnchorPointOnGestureStart` property for automatically emitting a
-ChangeAnchorPoint instance.
+`ChangeAnchorPoint` adjusts `view.layer.anchorPoint` while maintaining the same `view.frame`. This
+plan is emitted by `DirectlyManipulable` when a gesture recognizer begins.
 
 ## Installation
 
@@ -44,9 +42,9 @@ ChangeAnchorPoint instance.
 >
 >     gem install cocoapods
 
-Add `MaterialMotionDirectManipulationFamily` to your `Podfile`:
+Add `MaterialMotionDirectManipulation` to your `Podfile`:
 
-    pod 'MaterialMotionDirectManipulationFamily'
+    pod 'MaterialMotionDirectManipulation'
 
 Then run the following command:
 
@@ -56,7 +54,7 @@ Then run the following command:
 
 Import the framework:
 
-    @import MaterialMotionDirectManipulationFamily;
+    @import MaterialMotionDirectManipulation;
 
 You will now have access to all of the APIs.
 
@@ -65,18 +63,18 @@ You will now have access to all of the APIs.
 Check out a local copy of the repo to access the Catalog application by running the following
 commands:
 
-    git clone https://github.com/material-motion/material-motion-family-direct-manipulation-swift.git
-    cd material-motion-family-direct-manipulation-swift
+    git clone https://github.com/material-motion/direct-manipulation-swift.git
+    cd direct-manipulation-swift
     pod install
-    open MaterialMotionDirectManipulationFamily.xcworkspace
+    open MaterialMotionDirectManipulation.xcworkspace
 
-## Guides
+# Guides
 
 1. [How to make a view directly manipulable](#how-to-make-a-view-directly-manipulable)
 2. [How to make a view draggable](#how-to-make-a-view-draggable)
 3. [How to use an existing gesture recognizer to make a view draggable](#how-to-use-an-existing-gesture-recognizer-to-make-a-view-draggable)
 
-### How to make a view directly manipulable
+## How to make a view directly manipulable
 
 Code snippets:
 
@@ -92,7 +90,7 @@ Code snippets:
 runtime.addPlan(DirectlyManipulable(), to: <#Object#>)
 ```
 
-### How to make a view draggable
+## How to make a view draggable
 
 Code snippets:
 
@@ -108,7 +106,7 @@ Code snippets:
 runtime.addPlan(Draggable(), to: <#Object#>)
 ```
 
-### How to use an existing gesture recognizer to make a view draggable
+## How to use an existing gesture recognizer to make a view draggable
 
 Code snippets:
 
@@ -129,11 +127,11 @@ runtime.addPlan(Draggable(withGestureRecognizer: panGestureRecognizer), to: <#Ob
 
 We welcome contributions!
 
-Check out our [upcoming milestones](https://github.com/material-motion/material-motion-family-direct-manipulation-swift/milestones).
+Check out our [upcoming milestones](https://github.com/material-motion/direct-manipulation-swift/milestones).
 
-Learn more about [our team](https://material-motion.gitbooks.io/material-motion-team/content/),
-[our community](https://material-motion.gitbooks.io/material-motion-team/content/community/), and
-our [contributor essentials](https://material-motion.gitbooks.io/material-motion-team/content/essentials/).
+Learn more about [our team](https://material-motion.github.io/material-motion/team/),
+[our community](https://material-motion.github.io/material-motion/team/community/), and
+our [contributor essentials](https://material-motion.github.io/material-motion/team/essentials/).
 
 ## License
 

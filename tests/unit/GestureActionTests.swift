@@ -16,7 +16,7 @@
 
 import XCTest
 import MaterialMotionRuntime
-import MaterialMotionDirectManipulationFamily
+import MaterialMotionDirectManipulation
 
 class GestureActionTests: XCTestCase {
   func testThatDraggableDrags() {
@@ -24,8 +24,8 @@ class GestureActionTests: XCTestCase {
     let draggable = Draggable(withGestureRecognizer: pan)
     let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
 
-    let scheduler = Scheduler()
-    scheduler.addPlan(draggable, to: view)
+    let runtime = Runtime()
+    runtime.addPlan(draggable, to: view)
 
     pan.performTouch(state: .began)
     pan.performTouch(translation: CGPoint(x: 25, y: -50), state: .changed)
@@ -39,8 +39,8 @@ class GestureActionTests: XCTestCase {
     let pinchable = Pinchable(withGestureRecognizer: pinch)
     let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 80))
 
-    let scheduler = Scheduler()
-    scheduler.addPlan(pinchable, to: view)
+    let runtime = Runtime()
+    runtime.addPlan(pinchable, to: view)
 
     pinch.performTouch(scale: 1, state: .began)
     pinch.performTouch(scale: 0.50, state: .changed)
@@ -54,8 +54,8 @@ class GestureActionTests: XCTestCase {
     let rotatable = Rotatable(withGestureRecognizer: rotateGesture)
     let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 80))
 
-    let scheduler = Scheduler()
-    scheduler.addPlan(rotatable, to: view)
+    let runtime = Runtime()
+    runtime.addPlan(rotatable, to: view)
 
     rotateGesture.performTouch(state: .began)
     rotateGesture.performTouch(rotation: CGFloat.pi / 2, state: .changed)
@@ -70,8 +70,8 @@ class GestureActionTests: XCTestCase {
     let newAnchorPoint = CGPoint(x: 0.33, y: 0.33)
     let changeAnchor = ChangeAnchorPoint(withAnchorPoint: newAnchorPoint)
 
-    let scheduler = Scheduler()
-    scheduler.addPlan(changeAnchor, to: view)
+    let runtime = Runtime()
+    runtime.addPlan(changeAnchor, to: view)
 
     XCTAssertEqual(view.layer.anchorPoint, newAnchorPoint,
                    "View's anchor point (\(view.layer.anchorPoint.x), \(view.layer.anchorPoint.y)) should be (\(newAnchorPoint.x), \(newAnchorPoint.y))")

@@ -16,7 +16,7 @@
 
 #import <XCTest/XCTest.h>
 @import MaterialMotionRuntime;
-@import MaterialMotionDirectManipulationFamily;
+@import MaterialMotionDirectManipulation;
 
 @interface ObjectiveCAPITests : XCTestCase
 @end

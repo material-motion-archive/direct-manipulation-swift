@@ -17,18 +17,18 @@
 import UIKit.UIGestureRecognizerSubclass
 import XCTest
 import MaterialMotionRuntime
-@testable import MaterialMotionDirectManipulationFamily
+@testable import MaterialMotionDirectManipulation
 
 class SimpleGestureTests: XCTestCase {
 
   func testThatPlanAttachesRecognizerToTargetView() {
     let view = UIView()
 
-    let scheduler = Scheduler()
+    let runtime = Runtime()
 
     let draggable = Draggable()
 
-    scheduler.addPlan(draggable, to: view)
+    runtime.addPlan(draggable, to: view)
 
     XCTAssert(view.gestureRecognizers?.contains(draggable.panGestureRecognizer) ?? false, "View should have pan gesture recognizer attached")
   }
@@ -37,9 +37,9 @@ class SimpleGestureTests: XCTestCase {
     let view = UIView()
     view.isUserInteractionEnabled = false
 
-    let scheduler = Scheduler()
+    let runtime = Runtime()
 
-    scheduler.addPlan(Draggable(), to: view)
+    runtime.addPlan(Draggable(), to: view)
 
     XCTAssertTrue(view.isUserInteractionEnabled)
   }
@@ -53,10 +53,10 @@ class SimpleGestureTests: XCTestCase {
       Rotatable()
     ]
 
-    let scheduler = Scheduler()
+    let runtime = Runtime()
 
     for plan in plans {
-      scheduler.addPlan(plan, to: view)
+      runtime.addPlan(plan, to: view)
     }
 
     XCTAssert(view.gestureRecognizers?.count ?? 0 == plans.count, "View should have 3 gesture recognizers attached")
@@ -68,15 +68,15 @@ class SimpleGestureTests: XCTestCase {
     let recognizer = TestablePanGestureRecognizer()
     let plan = Draggable(withGestureRecognizer: recognizer)
 
-    let scheduler = Scheduler()
-    scheduler.addPlan(plan, to: targetView)
+    let runtime = Runtime()
+    runtime.addPlan(plan, to: targetView)
 
-    guard recognizer.targets.first is DraggablePerformer else {
+    guard recognizer.targets.first is GesturePerformer else {
       XCTFail("Pan gesture recognizer should have a DraggablePerformer target")
       return
     }
 
-    let selector = #selector(DraggablePerformer.handle(gesture:))
+    let selector = #selector(GesturePerformer.handle(gesture:))
     guard recognizer.actions.contains(selector) else {
       XCTFail("Pan gesture recognizer should have an action matching 'handle(gesture:)'")
       return
@@ -89,15 +89,15 @@ class SimpleGestureTests: XCTestCase {
     let recognizer = TestablePinchGestureRecognizer()
     let plan = Pinchable(withGestureRecognizer: recognizer)
 
-    let scheduler = Scheduler()
-    scheduler.addPlan(plan, to: targetView)
+    let runtime = Runtime()
+    runtime.addPlan(plan, to: targetView)
 
-    guard recognizer.targets.first is PinchablePerformer else {
+    guard recognizer.targets.first is GesturePerformer else {
       XCTFail("Pinch gesture recognizer should have a PinchablePerformer target")
       return
     }
 
-    let selector = #selector(PinchablePerformer.handle(gesture:))
+    let selector = #selector(GesturePerformer.handle(gesture:))
     guard recognizer.actions.contains(selector) else {
       XCTFail("Pinch gesture recognizer should have an action matching 'handle(gesture:)'")
       return
@@ -110,15 +110,15 @@ class SimpleGestureTests: XCTestCase {
     let recognizer = TestableRotationGestureRecognizer()
     let plan = Rotatable(withGestureRecognizer: recognizer)
 
-    let scheduler = Scheduler()
-    scheduler.addPlan(plan, to: targetView)
+    let runtime = Runtime()
+    runtime.addPlan(plan, to: targetView)
 
-    guard recognizer.targets.first is RotatablePerformer else {
+    guard recognizer.targets.first is GesturePerformer else {
       XCTFail("Rotation gesture recognizer should have a RotatablePerformer target")
       return
     }
 
-    let selector = #selector(RotatablePerformer.handle(gesture:))
+    let selector = #selector(GesturePerformer.handle(gesture:))
     guard recognizer.actions.contains(selector) else {
       XCTFail("Rotation gesture recognizer should have an action matching 'handle(gesture:)'")
       return

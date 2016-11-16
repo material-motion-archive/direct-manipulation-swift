@@ -29,12 +29,6 @@ public final class Rotatable: NSObject, Plan {
   /** The gesture recognizer whose events will be observed. */
   public let rotationGestureRecognizer: UIRotationGestureRecognizer
 
-  /**
-   Whether or not the target's anchorPoint should be modified each time the gesture
-   recognizer begins.
-   */
-  public var shouldAdjustAnchorPointOnGestureStart = true
-
   /** Creates a plan with a new rotation gesture recognizer. */
   public convenience override init() {
     self.init(withGestureRecognizer: UIRotationGestureRecognizer())
@@ -48,7 +42,7 @@ public final class Rotatable: NSObject, Plan {
 
   /** The performer that will fulfill this plan. */
   public func performerClass() -> AnyClass {
-    return RotatablePerformer.self
+    return GesturePerformer.self
   }
 
   /** Returns a copy of this plan. */
@@ -56,5 +50,20 @@ public final class Rotatable: NSObject, Plan {
     let rotatable = Rotatable(withGestureRecognizer: rotationGestureRecognizer)
     rotatable.shouldAdjustAnchorPointOnGestureStart = shouldAdjustAnchorPointOnGestureStart
     return rotatable
+  }
+
+  /**
+   Whether or not the target's anchorPoint should be modified each time the gesture recognizer
+   begins.
+   */
+  @available(*, deprecated, message: "Emit a ChangeAnchorPoint plan instead. Deprecated in v1.1.0.")
+  public var shouldAdjustAnchorPointOnGestureStart = true
+}
+
+extension Rotatable: Gesturable {
+  var gestureRecognizer: UIGestureRecognizer {
+    get {
+      return rotationGestureRecognizer
+    }
   }
 }

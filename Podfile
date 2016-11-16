@@ -1,10 +1,10 @@
-abstract_target 'MaterialMotionDirectManipulationFamily' do
-  pod 'MaterialMotionRuntime'
+abstract_target 'MaterialMotionDirectManipulation' do
+  pod 'MaterialMotionRuntime', "~> 6.0"
   pod 'CatalogByConvention'
 
-  pod 'MaterialMotionDirectManipulationFamily', :path => './'
+  pod 'MaterialMotionDirectManipulation', :path => './'
 
-  workspace 'MaterialMotionDirectManipulationFamily.xcworkspace'
+  workspace 'MaterialMotionDirectManipulation.xcworkspace'
   use_frameworks!
 
   target "Catalog" do

@@ -14,23 +14,9 @@
  limitations under the License.
  */
 
-import UIKit
-import MaterialMotionDirectManipulationFamily
-import MaterialMotionRuntime
+import Foundation
 
-class DirectManipulationViewController: UIViewController {
-
-  let runtime = Runtime()
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    view.backgroundColor = UIColor.white
-
-    let targetView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-    targetView.center = CGPoint(x: view.frame.midX, y: view.frame.midY)
-    targetView.backgroundColor = UIColor.red
-    view.addSubview(targetView)
-
-    runtime.addPlan(DirectlyManipulable(), to: targetView)
-  }
+protocol Gesturable {
+  var gestureRecognizer: UIGestureRecognizer { get }
+  var shouldAdjustAnchorPointOnGestureStart: Bool { get }
 }
