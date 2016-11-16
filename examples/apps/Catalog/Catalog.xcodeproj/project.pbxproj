@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		047DC51A59DEB258F091159F /* Pods_MaterialMotionDirectManipulationFamily_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211A19D660FB04114F03F7E7 /* Pods_MaterialMotionDirectManipulationFamily_UnitTests.framework */; };
-		664A5AB41DC93E410082B5DF /* TableOfContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664A5AB31DC93E410082B5DF /* TableOfContents.swift */; };
 		666FAA841D384A6B000363DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666FAA831D384A6B000363DA /* AppDelegate.swift */; };
 		666FAA8B1D384A6B000363DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 666FAA8A1D384A6B000363DA /* Assets.xcassets */; };
 		666FAA8E1D384A6B000363DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666FAA8C1D384A6B000363DA /* LaunchScreen.storyboard */; };
-		73D1CC614139358D78678E9F /* Pods_MaterialMotionDirectManipulationFamily_Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47AD29C808E6149118D934CA /* Pods_MaterialMotionDirectManipulationFamily_Catalog.framework */; };
+		66C3CA531DDC314500E49BFF /* DirectManipulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3CA521DDC314500E49BFF /* DirectManipulationViewController.swift */; };
+		66C3CA551DDC315A00E49BFF /* TableOfContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3CA541DDC315A00E49BFF /* TableOfContents.swift */; };
+		DB450DDC762113B35413E9CD /* Pods_MaterialMotionDirectManipulation_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640A049648E160038451EFB4 /* Pods_MaterialMotionDirectManipulation_UnitTests.framework */; };
 		DE0294BD1D5CE6E300A5BBA5 /* SimpleGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0294BB1D5CE6B400A5BBA5 /* SimpleGestureTests.swift */; };
 		DE1EFE1A1DB7EA33009939F5 /* ObjectiveCAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1EFE191DB7EA33009939F5 /* ObjectiveCAPITests.m */; };
 		DE1EFE1D1DB81FB6009939F5 /* GestureActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1EFE1B1DB81F4C009939F5 /* GestureActionTests.swift */; };
 		DE73309F1D88A188003BBF53 /* ComposedGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE73309D1D88A14B003BBF53 /* ComposedGestureTests.swift */; };
 		DE7330A21D88BD9C003BBF53 /* TestableGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7330A01D88B9A4003BBF53 /* TestableGestureRecognizer.swift */; };
-		DE7977851D4FF53900691A95 /* DirectManipulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7977841D4FF53900691A95 /* DirectManipulationViewController.swift */; };
 		DEFA68101DB96A2000C83810 /* AnchorPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFA680E1DB969A700C83810 /* AnchorPointTests.swift */; };
+		F2A0F350B01BEF36C2E02B27 /* Pods_MaterialMotionDirectManipulation_Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F684DB982E093F6EA7815F3C /* Pods_MaterialMotionDirectManipulation_Catalog.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1614649213BE7E305369FE5D /* Pods_MaterialMotionGesturesFamily_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaterialMotionGesturesFamily_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		211A19D660FB04114F03F7E7 /* Pods_MaterialMotionDirectManipulationFamily_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaterialMotionDirectManipulationFamily_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		47AD29C808E6149118D934CA /* Pods_MaterialMotionDirectManipulationFamily_Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaterialMotionDirectManipulationFamily_Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		664A5AB31DC93E410082B5DF /* TableOfContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfContents.swift; sourceTree = "<group>"; };
+		60C24FEA06650335F8D2BC9C /* Pods-MaterialMotionDirectManipulation-Catalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionDirectManipulation-Catalog.release.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulation-Catalog/Pods-MaterialMotionDirectManipulation-Catalog.release.xcconfig"; sourceTree = "<group>"; };
+		640A049648E160038451EFB4 /* Pods_MaterialMotionDirectManipulation_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaterialMotionDirectManipulation_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		666FAA801D384A6B000363DA /* Catalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		666FAA831D384A6B000363DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Catalog/AppDelegate.swift; sourceTree = "<group>"; };
 		666FAA8A1D384A6B000363DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,18 +43,18 @@
 		666FAA941D384A6B000363DA /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		666FAA9A1D384A6B000363DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../UnitTests/Info.plist; sourceTree = "<group>"; };
 		666FAAA71D384D51000363DA /* UnitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UnitTests-Bridging-Header.h"; path = "../UnitTests/UnitTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		797B1E98CB9449E4A6927255 /* Pods_MaterialMotionGesturesFamily_Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaterialMotionGesturesFamily_Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB1C7A2F80E7D1E0F3503AFD /* Pods-MaterialMotionDirectManipulationFamily-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionDirectManipulationFamily-UnitTests.release.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulationFamily-UnitTests/Pods-MaterialMotionDirectManipulationFamily-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
-		DC36123760B2FCBFD565C0E7 /* Pods-MaterialMotionDirectManipulationFamily-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionDirectManipulationFamily-UnitTests.debug.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulationFamily-UnitTests/Pods-MaterialMotionDirectManipulationFamily-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		66C3CA521DDC314500E49BFF /* DirectManipulationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectManipulationViewController.swift; sourceTree = "<group>"; };
+		66C3CA541DDC315A00E49BFF /* TableOfContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableOfContents.swift; path = Catalog/TableOfContents.swift; sourceTree = "<group>"; };
+		74FB70CCAB14B87E14145471 /* Pods-MaterialMotionDirectManipulation-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionDirectManipulation-UnitTests.debug.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulation-UnitTests/Pods-MaterialMotionDirectManipulation-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		87C64DD7E89ABD20FBF90690 /* Pods-MaterialMotionDirectManipulation-Catalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionDirectManipulation-Catalog.debug.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulation-Catalog/Pods-MaterialMotionDirectManipulation-Catalog.debug.xcconfig"; sourceTree = "<group>"; };
+		A6DBE1EF254176585C8E353B /* Pods-MaterialMotionDirectManipulation-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionDirectManipulation-UnitTests.release.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulation-UnitTests/Pods-MaterialMotionDirectManipulation-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE0294BB1D5CE6B400A5BBA5 /* SimpleGestureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleGestureTests.swift; sourceTree = "<group>"; };
 		DE1EFE191DB7EA33009939F5 /* ObjectiveCAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveCAPITests.m; sourceTree = "<group>"; };
 		DE1EFE1B1DB81F4C009939F5 /* GestureActionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureActionTests.swift; sourceTree = "<group>"; };
 		DE73309D1D88A14B003BBF53 /* ComposedGestureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposedGestureTests.swift; sourceTree = "<group>"; };
 		DE7330A01D88B9A4003BBF53 /* TestableGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestableGestureRecognizer.swift; sourceTree = "<group>"; };
-		DE7977841D4FF53900691A95 /* DirectManipulationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectManipulationViewController.swift; path = apps/Catalog/DirectManipulationViewController.swift; sourceTree = "<group>"; };
 		DEFA680E1DB969A700C83810 /* AnchorPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorPointTests.swift; sourceTree = "<group>"; };
-		F3DF17AC229B9E4FE3049EC8 /* Pods-MaterialMotionDirectManipulationFamily-Catalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionDirectManipulationFamily-Catalog.release.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulationFamily-Catalog/Pods-MaterialMotionDirectManipulationFamily-Catalog.release.xcconfig"; sourceTree = "<group>"; };
-		F4B078EA77710D032C55A942 /* Pods-MaterialMotionDirectManipulationFamily-Catalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaterialMotionDirectManipulationFamily-Catalog.debug.xcconfig"; path = "../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulationFamily-Catalog/Pods-MaterialMotionDirectManipulationFamily-Catalog.debug.xcconfig"; sourceTree = "<group>"; };
+		F684DB982E093F6EA7815F3C /* Pods_MaterialMotionDirectManipulation_Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaterialMotionDirectManipulation_Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73D1CC614139358D78678E9F /* Pods_MaterialMotionDirectManipulationFamily_Catalog.framework in Frameworks */,
+				F2A0F350B01BEF36C2E02B27 /* Pods_MaterialMotionDirectManipulation_Catalog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,24 +70,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				047DC51A59DEB258F091159F /* Pods_MaterialMotionDirectManipulationFamily_UnitTests.framework in Frameworks */,
+				DB450DDC762113B35413E9CD /* Pods_MaterialMotionDirectManipulation_UnitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EAA61E20A50B7AF9FA5A5E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87C64DD7E89ABD20FBF90690 /* Pods-MaterialMotionDirectManipulation-Catalog.debug.xcconfig */,
+				60C24FEA06650335F8D2BC9C /* Pods-MaterialMotionDirectManipulation-Catalog.release.xcconfig */,
+				74FB70CCAB14B87E14145471 /* Pods-MaterialMotionDirectManipulation-UnitTests.debug.xcconfig */,
+				A6DBE1EF254176585C8E353B /* Pods-MaterialMotionDirectManipulation-UnitTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		666FAA771D384A6B000363DA = {
 			isa = PBXGroup;
 			children = (
-				664A5AB31DC93E410082B5DF /* TableOfContents.swift */,
+				66C3CA541DDC315A00E49BFF /* TableOfContents.swift */,
 				666FAAA31D384B13000363DA /* examples */,
 				666FAAA61D384B77000363DA /* catalog */,
 				666FAA971D384A6B000363DA /* tests */,
 				666FAA821D384A6B000363DA /* resources */,
 				666FAA811D384A6B000363DA /* Products */,
-				A06CEB785B01B566C17BE4FD /* Pods */,
-				735A273DCE26B8EBCF88F9CE /* Frameworks */,
+				3EAA61E20A50B7AF9FA5A5E3 /* Pods */,
+				78863BC90E8D47314B3728A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,7 +138,7 @@
 		666FAAA31D384B13000363DA /* examples */ = {
 			isa = PBXGroup;
 			children = (
-				DE7977841D4FF53900691A95 /* DirectManipulationViewController.swift */,
+				66C3CA521DDC314500E49BFF /* DirectManipulationViewController.swift */,
 			);
 			name = examples;
 			path = ../..;
@@ -162,26 +171,13 @@
 			name = catalog;
 			sourceTree = "<group>";
 		};
-		735A273DCE26B8EBCF88F9CE /* Frameworks */ = {
+		78863BC90E8D47314B3728A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				797B1E98CB9449E4A6927255 /* Pods_MaterialMotionGesturesFamily_Catalog.framework */,
-				1614649213BE7E305369FE5D /* Pods_MaterialMotionGesturesFamily_UnitTests.framework */,
-				47AD29C808E6149118D934CA /* Pods_MaterialMotionDirectManipulationFamily_Catalog.framework */,
-				211A19D660FB04114F03F7E7 /* Pods_MaterialMotionDirectManipulationFamily_UnitTests.framework */,
+				F684DB982E093F6EA7815F3C /* Pods_MaterialMotionDirectManipulation_Catalog.framework */,
+				640A049648E160038451EFB4 /* Pods_MaterialMotionDirectManipulation_UnitTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A06CEB785B01B566C17BE4FD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F4B078EA77710D032C55A942 /* Pods-MaterialMotionDirectManipulationFamily-Catalog.debug.xcconfig */,
-				F3DF17AC229B9E4FE3049EC8 /* Pods-MaterialMotionDirectManipulationFamily-Catalog.release.xcconfig */,
-				DC36123760B2FCBFD565C0E7 /* Pods-MaterialMotionDirectManipulationFamily-UnitTests.debug.xcconfig */,
-				DB1C7A2F80E7D1E0F3503AFD /* Pods-MaterialMotionDirectManipulationFamily-UnitTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		DE1EFE1E1DB820B3009939F5 /* helpers */ = {
@@ -199,12 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 666FAA9D1D384A6B000363DA /* Build configuration list for PBXNativeTarget "Catalog" */;
 			buildPhases = (
-				0F0E2F38B481839BCAAC836F /* [CP] Check Pods Manifest.lock */,
+				DB410BB74E3804F0AC3D667C /* [CP] Check Pods Manifest.lock */,
 				666FAA7C1D384A6B000363DA /* Sources */,
 				666FAA7E1D384A6B000363DA /* Resources */,
 				2A4890647E0CE5AFC94D98B2 /* Frameworks */,
-				E2D5126F2C4E7C24619FFC4F /* [CP] Embed Pods Frameworks */,
-				968D78735855AE7E8FD1D42D /* [CP] Copy Pods Resources */,
+				21B4D2475A71C915A7597275 /* [CP] Embed Pods Frameworks */,
+				DA6F30FD7688FE1F1FDA46C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,12 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 666FAAA01D384A6B000363DA /* Build configuration list for PBXNativeTarget "UnitTests" */;
 			buildPhases = (
-				5B6F9E68F8D069CBDF8192C1 /* [CP] Check Pods Manifest.lock */,
+				8D5EDE66B1A9F9BC5B5D6178 /* [CP] Check Pods Manifest.lock */,
 				666FAA901D384A6B000363DA /* Sources */,
 				666FAA921D384A6B000363DA /* Resources */,
 				6C4BDA25E1015DE57D87CB3C /* Frameworks */,
-				E0BB959A5CE426C14581C409 /* [CP] Embed Pods Frameworks */,
-				32A8EF12C3039B923A30550A /* [CP] Copy Pods Resources */,
+				0F2AAF498FE156485C8F2F80 /* [CP] Embed Pods Frameworks */,
+				D3ADCF8E46A657279D4EB028 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -297,7 +293,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0F0E2F38B481839BCAAC836F /* [CP] Check Pods Manifest.lock */ = {
+		0F2AAF498FE156485C8F2F80 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulation-UnitTests/Pods-MaterialMotionDirectManipulation-UnitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21B4D2475A71C915A7597275 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulation-Catalog/Pods-MaterialMotionDirectManipulation-Catalog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D5EDE66B1A9F9BC5B5D6178 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -312,7 +338,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		32A8EF12C3039B923A30550A /* [CP] Copy Pods Resources */ = {
+		D3ADCF8E46A657279D4EB028 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -324,10 +350,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulationFamily-UnitTests/Pods-MaterialMotionDirectManipulationFamily-UnitTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulation-UnitTests/Pods-MaterialMotionDirectManipulation-UnitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5B6F9E68F8D069CBDF8192C1 /* [CP] Check Pods Manifest.lock */ = {
+		DA6F30FD7688FE1F1FDA46C5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulation-Catalog/Pods-MaterialMotionDirectManipulation-Catalog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB410BB74E3804F0AC3D667C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -340,51 +381,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		968D78735855AE7E8FD1D42D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulationFamily-Catalog/Pods-MaterialMotionDirectManipulationFamily-Catalog-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E0BB959A5CE426C14581C409 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulationFamily-UnitTests/Pods-MaterialMotionDirectManipulationFamily-UnitTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E2D5126F2C4E7C24619FFC4F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../../../Pods/Target Support Files/Pods-MaterialMotionDirectManipulationFamily-Catalog/Pods-MaterialMotionDirectManipulationFamily-Catalog-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -394,9 +390,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE7977851D4FF53900691A95 /* DirectManipulationViewController.swift in Sources */,
+				66C3CA531DDC314500E49BFF /* DirectManipulationViewController.swift in Sources */,
 				666FAA841D384A6B000363DA /* AppDelegate.swift in Sources */,
-				664A5AB41DC93E410082B5DF /* TableOfContents.swift in Sources */,
+				66C3CA551DDC315A00E49BFF /* TableOfContents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +522,7 @@
 		};
 		666FAA9E1D384A6B000363DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4B078EA77710D032C55A942 /* Pods-MaterialMotionDirectManipulationFamily-Catalog.debug.xcconfig */;
+			baseConfigurationReference = 87C64DD7E89ABD20FBF90690 /* Pods-MaterialMotionDirectManipulation-Catalog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EQHXZ8M8AV;
@@ -540,7 +536,7 @@
 		};
 		666FAA9F1D384A6B000363DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3DF17AC229B9E4FE3049EC8 /* Pods-MaterialMotionDirectManipulationFamily-Catalog.release.xcconfig */;
+			baseConfigurationReference = 60C24FEA06650335F8D2BC9C /* Pods-MaterialMotionDirectManipulation-Catalog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EQHXZ8M8AV;
@@ -555,7 +551,7 @@
 		};
 		666FAAA11D384A6B000363DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC36123760B2FCBFD565C0E7 /* Pods-MaterialMotionDirectManipulationFamily-UnitTests.debug.xcconfig */;
+			baseConfigurationReference = 74FB70CCAB14B87E14145471 /* Pods-MaterialMotionDirectManipulation-UnitTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -572,7 +568,7 @@
 		};
 		666FAAA21D384A6B000363DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB1C7A2F80E7D1E0F3503AFD /* Pods-MaterialMotionDirectManipulationFamily-UnitTests.release.xcconfig */;
+			baseConfigurationReference = A6DBE1EF254176585C8E353B /* Pods-MaterialMotionDirectManipulation-UnitTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;

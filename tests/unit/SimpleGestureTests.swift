@@ -17,7 +17,7 @@
 import UIKit.UIGestureRecognizerSubclass
 import XCTest
 import MaterialMotionRuntime
-@testable import MaterialMotionDirectManipulationFamily
+@testable import MaterialMotionDirectManipulation
 
 class SimpleGestureTests: XCTestCase {
 

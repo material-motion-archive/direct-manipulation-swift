@@ -15,7 +15,7 @@
  */
 
 import UIKit
-import MaterialMotionDirectManipulationFamily
+import MaterialMotionDirectManipulation
 import MaterialMotionRuntime
 
 class DirectManipulationViewController: UIViewController {

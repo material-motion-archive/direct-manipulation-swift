@@ -16,7 +16,7 @@
 
 import XCTest
 import MaterialMotionRuntime
-import MaterialMotionDirectManipulationFamily
+import MaterialMotionDirectManipulation
 
 class ComposedGestureTests: XCTestCase {
   func testCopyingAComposedPlan() {

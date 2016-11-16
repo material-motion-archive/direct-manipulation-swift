@@ -13,13 +13,13 @@
   "arc.feature.start.default": "origin/develop",
   "unit.xcode": {
     "build": {
-      "workspace": "MaterialMotionDirectManipulationFamily.xcworkspace",
+      "workspace": "MaterialMotionDirectManipulation.xcworkspace",
       "scheme": "UnitTests",
       "configuration": "Debug",
       "destination": "platform=iOS Simulator,name=iPhone 6s"
     },
     "coverage": {
-      "product": "MaterialMotionDirectManipulationFamily.framework/MaterialMotionDirectManipulationFamily"
+      "product": "MaterialMotionDirectManipulation.framework/MaterialMotionDirectManipulation"
     },
     "pre-build": "pod install"
   }

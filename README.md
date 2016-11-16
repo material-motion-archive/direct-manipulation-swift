@@ -1,7 +1,7 @@
-# Direct Manipulation Material Motion Family in Swift
+# Direct Manipulation for Material Motion (Swift)
 
-[![Build Status](https://travis-ci.org/material-motion/material-motion-family-direct-manipulation-swift.svg?branch=develop)](https://travis-ci.org/material-motion/material-motion-family-direct-manipulation-swift)
-[![codecov](https://codecov.io/gh/material-motion/material-motion-family-direct-manipulation-swift/branch/develop/graph/badge.svg)](https://codecov.io/gh/material-motion/material-motion-family-direct-manipulation-swift)
+[![Build Status](https://travis-ci.org/material-motion/direct-manipulation-swift.svg?branch=develop)](https://travis-ci.org/material-motion/direct-manipulation-swift)
+[![codecov](https://codecov.io/gh/material-motion/direct-manipulation-swift/branch/develop/graph/badge.svg)](https://codecov.io/gh/material-motion/direct-manipulation-swift)
 
 ## Supported languages
 
@@ -44,9 +44,9 @@ ChangeAnchorPoint instance.
 >
 >     gem install cocoapods
 
-Add `MaterialMotionDirectManipulationFamily` to your `Podfile`:
+Add `MaterialMotionDirectManipulation` to your `Podfile`:
 
-    pod 'MaterialMotionDirectManipulationFamily'
+    pod 'MaterialMotionDirectManipulation'
 
 Then run the following command:
 
@@ -56,7 +56,7 @@ Then run the following command:
 
 Import the framework:
 
-    @import MaterialMotionDirectManipulationFamily;
+    @import MaterialMotionDirectManipulation;
 
 You will now have access to all of the APIs.
 
@@ -65,18 +65,18 @@ You will now have access to all of the APIs.
 Check out a local copy of the repo to access the Catalog application by running the following
 commands:
 
-    git clone https://github.com/material-motion/material-motion-family-direct-manipulation-swift.git
-    cd material-motion-family-direct-manipulation-swift
+    git clone https://github.com/material-motion/direct-manipulation-swift.git
+    cd direct-manipulation-swift
     pod install
-    open MaterialMotionDirectManipulationFamily.xcworkspace
+    open MaterialMotionDirectManipulation.xcworkspace
 
-## Guides
+# Guides
 
 1. [How to make a view directly manipulable](#how-to-make-a-view-directly-manipulable)
 2. [How to make a view draggable](#how-to-make-a-view-draggable)
 3. [How to use an existing gesture recognizer to make a view draggable](#how-to-use-an-existing-gesture-recognizer-to-make-a-view-draggable)
 
-### How to make a view directly manipulable
+## How to make a view directly manipulable
 
 Code snippets:
 
@@ -92,7 +92,7 @@ Code snippets:
 runtime.addPlan(DirectlyManipulable(), to: <#Object#>)
 ```
 
-### How to make a view draggable
+## How to make a view draggable
 
 Code snippets:
 
@@ -108,7 +108,7 @@ Code snippets:
 runtime.addPlan(Draggable(), to: <#Object#>)
 ```
 
-### How to use an existing gesture recognizer to make a view draggable
+## How to use an existing gesture recognizer to make a view draggable
 
 Code snippets:
 
@@ -129,11 +129,11 @@ runtime.addPlan(Draggable(withGestureRecognizer: panGestureRecognizer), to: <#Ob
 
 We welcome contributions!
 
-Check out our [upcoming milestones](https://github.com/material-motion/material-motion-family-direct-manipulation-swift/milestones).
+Check out our [upcoming milestones](https://github.com/material-motion/direct-manipulation-swift/milestones).
 
-Learn more about [our team](https://material-motion.gitbooks.io/material-motion-team/content/),
-[our community](https://material-motion.gitbooks.io/material-motion-team/content/community/), and
-our [contributor essentials](https://material-motion.gitbooks.io/material-motion-team/content/essentials/).
+Learn more about [our team](https://material-motion.github.io/material-motion/team/),
+[our community](https://material-motion.github.io/material-motion/team/community/), and
+our [contributor essentials](https://material-motion.github.io/material-motion/team/essentials/).
 
 ## License
 

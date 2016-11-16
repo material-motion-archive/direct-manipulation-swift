@@ -16,9 +16,10 @@
 
 import XCTest
 import MaterialMotionRuntime
-import MaterialMotionDirectManipulationFamily
+import MaterialMotionDirectManipulation
 
 class AnchorPointTests: XCTestCase {
+  @available(*, deprecated)
   func testThatAnchorPointIsModifiedByDraggablePerformer() {
     let pan = TestablePanGestureRecognizer()
     let draggable = Draggable(withGestureRecognizer: pan)
@@ -59,6 +60,7 @@ class AnchorPointTests: XCTestCase {
     XCTAssertEqual(view.layer.anchorPoint, CGPoint(x: 0.1, y: 0.2))
   }
 
+  @available(*, deprecated)
   func testThatPinchableAnchorPointFlagPreventsModification() {
     let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
