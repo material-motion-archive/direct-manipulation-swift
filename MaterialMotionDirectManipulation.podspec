@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "MaterialMotionDirectManipulation"
   s.summary      = "Direct Manipulation for Material Motion (Swift)"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.authors      = "The Material Motion Authors"
   s.license      = "Apache 2.0"
   s.homepage     = "https://github.com/material-motion/direct-manipulation-swift"
