@@ -20,7 +20,7 @@ import MaterialMotionRuntime
 
 public class DirectManipulationViewController: UIViewController {
 
-  let runtime = Runtime()
+  let runtime = MotionRuntime()
 
   override public func viewDidLoad() {
     super.viewDidLoad()

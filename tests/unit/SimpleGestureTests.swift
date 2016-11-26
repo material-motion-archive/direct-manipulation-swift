@@ -24,7 +24,7 @@ class SimpleGestureTests: XCTestCase {
   func testThatPlanAttachesRecognizerToTargetView() {
     let view = UIView()
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
 
     let draggable = Draggable()
 
@@ -37,7 +37,7 @@ class SimpleGestureTests: XCTestCase {
     let view = UIView()
     view.isUserInteractionEnabled = false
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
 
     runtime.addPlan(Draggable(), to: view)
 
@@ -53,7 +53,7 @@ class SimpleGestureTests: XCTestCase {
       Rotatable()
     ]
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
 
     for plan in plans {
       runtime.addPlan(plan, to: view)
@@ -68,7 +68,7 @@ class SimpleGestureTests: XCTestCase {
     let recognizer = TestablePanGestureRecognizer()
     let plan = Draggable(withGestureRecognizer: recognizer)
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
     runtime.addPlan(plan, to: targetView)
 
     guard recognizer.targets.first is GesturePerformer else {
@@ -89,7 +89,7 @@ class SimpleGestureTests: XCTestCase {
     let recognizer = TestablePinchGestureRecognizer()
     let plan = Pinchable(withGestureRecognizer: recognizer)
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
     runtime.addPlan(plan, to: targetView)
 
     guard recognizer.targets.first is GesturePerformer else {
@@ -110,7 +110,7 @@ class SimpleGestureTests: XCTestCase {
     let recognizer = TestableRotationGestureRecognizer()
     let plan = Rotatable(withGestureRecognizer: recognizer)
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
     runtime.addPlan(plan, to: targetView)
 
     guard recognizer.targets.first is GesturePerformer else {

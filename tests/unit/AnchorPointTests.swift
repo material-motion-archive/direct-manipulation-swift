@@ -26,7 +26,7 @@ class AnchorPointTests: XCTestCase {
     draggable.shouldAdjustAnchorPointOnGestureStart = true
     let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
     runtime.addPlan(draggable, to: view)
 
     pan.performTouch(location: CGPoint(x: 10, y: 20), state: .began)
@@ -39,7 +39,7 @@ class AnchorPointTests: XCTestCase {
     let pinchable = Pinchable(withGestureRecognizer: pinch)
     let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
     runtime.addPlan(pinchable, to: view)
 
     pinch.performTouch(location: CGPoint(x: 10, y: 20), state: .began)
@@ -52,7 +52,7 @@ class AnchorPointTests: XCTestCase {
     let rotatable = Rotatable(withGestureRecognizer: rotate)
     let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
     runtime.addPlan(rotatable, to: view)
 
     rotate.performTouch(location: CGPoint(x: 10, y: 20), state: .began)
@@ -68,7 +68,7 @@ class AnchorPointTests: XCTestCase {
     let pinchable = Pinchable(withGestureRecognizer: pinch)
     pinchable.shouldAdjustAnchorPointOnGestureStart = false
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
     runtime.addPlan(pinchable, to: view)
 
     pinch.performTouch(location: CGPoint(x: 10, y: 20), state: .began)

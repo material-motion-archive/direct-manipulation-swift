@@ -24,7 +24,7 @@ class GestureActionTests: XCTestCase {
     let draggable = Draggable(withGestureRecognizer: pan)
     let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
     runtime.addPlan(draggable, to: view)
 
     pan.performTouch(state: .began)
@@ -39,7 +39,7 @@ class GestureActionTests: XCTestCase {
     let pinchable = Pinchable(withGestureRecognizer: pinch)
     let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 80))
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
     runtime.addPlan(pinchable, to: view)
 
     pinch.performTouch(scale: 1, state: .began)
@@ -54,7 +54,7 @@ class GestureActionTests: XCTestCase {
     let rotatable = Rotatable(withGestureRecognizer: rotateGesture)
     let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 80))
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
     runtime.addPlan(rotatable, to: view)
 
     rotateGesture.performTouch(state: .began)
@@ -70,7 +70,7 @@ class GestureActionTests: XCTestCase {
     let newAnchorPoint = CGPoint(x: 0.33, y: 0.33)
     let changeAnchor = ChangeAnchorPoint(withAnchorPoint: newAnchorPoint)
 
-    let runtime = Runtime()
+    let runtime = MotionRuntime()
     runtime.addPlan(changeAnchor, to: view)
 
     XCTAssertEqual(view.layer.anchorPoint, newAnchorPoint,
