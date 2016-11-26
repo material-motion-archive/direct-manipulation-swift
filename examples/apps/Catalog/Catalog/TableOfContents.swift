@@ -16,6 +16,8 @@
 
 // MARK: Catalog by convention
 
+import MaterialMotionDirectManipulation
+
 extension DirectManipulationViewController {
   class func catalogBreadcrumbs() -> [String] {
     return ["1. Direct manipulation"]

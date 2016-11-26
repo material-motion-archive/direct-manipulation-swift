@@ -18,11 +18,11 @@ import UIKit
 import MaterialMotionDirectManipulation
 import MaterialMotionRuntime
 
-class DirectManipulationViewController: UIViewController {
+public class DirectManipulationViewController: UIViewController {
 
   let runtime = Runtime()
 
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = UIColor.white
 
