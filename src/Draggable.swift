@@ -27,7 +27,7 @@ import MaterialMotionRuntime
 @objc(MDMDraggable)
 public final class Draggable: NSObject, Plan {
   /** The gesture recognizer whose events will be observed. */
-  public let panGestureRecognizer: UIPanGestureRecognizer
+  public var panGestureRecognizer: UIPanGestureRecognizer
 
   /** Creates a plan with a new pan gesture recognizer. */
   public convenience override init() {

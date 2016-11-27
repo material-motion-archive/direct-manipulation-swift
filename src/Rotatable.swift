@@ -27,7 +27,7 @@ import MaterialMotionRuntime
 @objc(MDMRotatable)
 public final class Rotatable: NSObject, Plan {
   /** The gesture recognizer whose events will be observed. */
-  public let rotationGestureRecognizer: UIRotationGestureRecognizer
+  public var rotationGestureRecognizer: UIRotationGestureRecognizer
 
   /** Creates a plan with a new rotation gesture recognizer. */
   public convenience override init() {

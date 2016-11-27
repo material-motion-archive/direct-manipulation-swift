@@ -28,7 +28,7 @@ import MaterialMotionRuntime
 @objc(MDMPinchable)
 public final class Pinchable: NSObject, Plan {
   /** The gesture recognizer whose events will be observed. */
-  public let pinchGestureRecognizer: UIPinchGestureRecognizer
+  public var pinchGestureRecognizer: UIPinchGestureRecognizer
 
   /** Creates a plan with a new pinch gesture recognizer. */
   public convenience override init() {
