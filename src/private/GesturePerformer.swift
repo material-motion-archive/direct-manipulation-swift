@@ -93,8 +93,8 @@ final class GesturePerformer: NSObject, ContinuousPerforming, ComposablePerformi
       previousScale = 1
     }
 
-    let newScale = 1 + (pinchRecognizer.scale - previousScale)
-    target.transform = target.transform.scaledBy(x: newScale, y: newScale)
+    let scaleBy = (pinchRecognizer.scale / previousScale)
+    target.transform = target.transform.scaledBy(x: scaleBy, y: scaleBy)
     previousScale = pinchRecognizer.scale
   }
 
