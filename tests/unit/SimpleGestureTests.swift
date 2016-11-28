@@ -65,7 +65,7 @@ class SimpleGestureTests: XCTestCase {
   func testThatTargetActionIsAddedToRecognizerUnderDraggablePlan() {
     let targetView = UIView()
 
-    let recognizer = TestablePanGestureRecognizer()
+    let recognizer = SimulatedPanGestureRecognizer()
     let plan = Draggable(withGestureRecognizer: recognizer)
 
     let runtime = MotionRuntime()
@@ -86,7 +86,7 @@ class SimpleGestureTests: XCTestCase {
   func testThatTargetActionIsAddedToRecognizerUnderPinchablePlan() {
     let targetView = UIView()
 
-    let recognizer = TestablePinchGestureRecognizer()
+    let recognizer = SimulatedPinchGestureRecognizer()
     let plan = Pinchable(withGestureRecognizer: recognizer)
 
     let runtime = MotionRuntime()
@@ -107,7 +107,7 @@ class SimpleGestureTests: XCTestCase {
   func testThatTargetActionIsAddedToRecognizerUnderRotatablePlan() {
     let targetView = UIView()
 
-    let recognizer = TestableRotationGestureRecognizer()
+    let recognizer = SimulatedRotationGestureRecognizer()
     let plan = Rotatable(withGestureRecognizer: recognizer)
 
     let runtime = MotionRuntime()

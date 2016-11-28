@@ -12,6 +12,7 @@ end
 target "UnitTests" do
   project 'examples/apps/Catalog/Catalog.xcodeproj'
   pod 'MaterialMotionDirectManipulation/tests', :path => './'
+  pod 'MaterialMotionDirectManipulation/lib', :path => './'
 end
 
 post_install do |installer|

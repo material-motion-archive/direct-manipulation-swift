@@ -6,18 +6,15 @@ PODS:
   - MaterialMotionDirectManipulation/lib (1.1.0):
     - MaterialMotionRuntime (< 7.0, >= 5.0)
   - MaterialMotionDirectManipulation/tests (1.1.0):
-    - MaterialMotionDirectManipulation/lib
     - MaterialMotionRuntime (< 7.0, >= 5.0)
-    - MaterialMotionRuntime/tests
   - MaterialMotionRuntime (6.0.1):
     - MaterialMotionRuntime/lib (= 6.0.1)
   - MaterialMotionRuntime/lib (6.0.1)
-  - MaterialMotionRuntime/tests (6.0.1):
-    - MaterialMotionRuntime/lib
 
 DEPENDENCIES:
   - CatalogByConvention
   - MaterialMotionDirectManipulation/examples (from `./`)
+  - MaterialMotionDirectManipulation/lib (from `./`)
   - MaterialMotionDirectManipulation/tests (from `./`)
   - MaterialMotionRuntime (from `https://github.com/material-motion/runtime-objc.git`, branch `develop`)
 
@@ -35,9 +32,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CatalogByConvention: be55c2263132e4f9f59299ac8a528ee8715b3275
-  MaterialMotionDirectManipulation: 8eb20c75af62707dad9c23abc095eef04d179fd8
+  MaterialMotionDirectManipulation: 047ea06454c6e89bfb8021fab78b699c3658ea3f
   MaterialMotionRuntime: 428cc4ff81bc4190101bfb1dd34d9e13e26eeb36
 
-PODFILE CHECKSUM: 667d02eaf4fb0401f68185aa2bfabcb06c080cb6
+PODFILE CHECKSUM: 541d5be7a204410a78d02bc364a6f523d16881b9
 
 COCOAPODS: 1.1.1
