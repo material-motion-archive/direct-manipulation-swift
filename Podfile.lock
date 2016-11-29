@@ -30,13 +30,13 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MaterialMotionRuntime:
-    :commit: 910c1c4a397edf96af65991a046229c56c11d947
+    :commit: '09bbc01335cf7ad76e45448e084c69c51ae5c3a1'
     :git: https://github.com/material-motion/runtime-objc.git
 
 SPEC CHECKSUMS:
   CatalogByConvention: be55c2263132e4f9f59299ac8a528ee8715b3275
   MaterialMotionDirectManipulation: 8eb20c75af62707dad9c23abc095eef04d179fd8
-  MaterialMotionRuntime: c7bcd694687ba429a14b749b7901e396146f3060
+  MaterialMotionRuntime: 428cc4ff81bc4190101bfb1dd34d9e13e26eeb36
 
 PODFILE CHECKSUM: 667d02eaf4fb0401f68185aa2bfabcb06c080cb6
 
