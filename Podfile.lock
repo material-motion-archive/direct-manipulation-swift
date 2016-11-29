@@ -27,7 +27,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MaterialMotionRuntime:
-    :commit: '09bbc01335cf7ad76e45448e084c69c51ae5c3a1'
+    :commit: '0922102d40db6d903e3691a269b00eadb01a1490'
     :git: https://github.com/material-motion/runtime-objc.git
 
 SPEC CHECKSUMS:
