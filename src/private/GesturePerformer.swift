@@ -53,7 +53,7 @@ final class GesturePerformer: NSObject, ContinuousPerforming, ComposablePerformi
     }
 
     if shouldAdjustAnchorPoint {
-      gestureRecognizer.addTarget(self, action: #selector(modifyAnchorPoint(using:)))
+      emitter.emitPlan(AdjustsAnchorPoint(withGestureRecognizer: gestureRecognizer))
     }
 
     let isActive = gestureRecognizer.state == .began || gestureRecognizer.state == .changed
@@ -105,12 +105,6 @@ final class GesturePerformer: NSObject, ContinuousPerforming, ComposablePerformi
     } else if gesture.state == .ended || gesture.state == .cancelled {
       gestureTokens[gesture]!.terminate()
       gestureTokens.removeValue(forKey: gesture)
-    }
-  }
-
-  func modifyAnchorPoint(using gesture: UIGestureRecognizer) {
-    if gesture.state == .began {
-      emitter.emitPlan(makeAnchorPointAdjustment(using: gesture, on: target))
     }
   }
 

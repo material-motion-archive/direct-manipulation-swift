@@ -65,6 +65,7 @@ class GestureActionTests: XCTestCase {
     XCTAssertEqual(rotation, CGFloat.pi / 2, "View's rotation (\(rotation) should equal Pi / 2")
   }
 
+  @available(*, deprecated)
   func testThatAnchorPointIsModified() {
     let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
     let newAnchorPoint = CGPoint(x: 0.33, y: 0.33)

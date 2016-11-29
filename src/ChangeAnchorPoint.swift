@@ -24,6 +24,7 @@ import MaterialMotionRuntime
  Supported target types: UIView, CALayer.
  */
 @objc(MDMChangeAnchorPoint)
+@available(*, deprecated, message: "Add AdjustsAnchorPoint instead. Deprecated in #develop#.")
 public final class ChangeAnchorPoint: NSObject, Plan {
 
   /**
@@ -53,4 +54,22 @@ public final class ChangeAnchorPoint: NSObject, Plan {
   public func copy(with zone: NSZone? = nil) -> Any {
     return ChangeAnchorPoint(withAnchorPoint: anchorPoint)
   }
+}
+
+/**
+ Changes the anchor point of a given view to the provided anchorPoint while maintaining the view's
+ frame.
+
+ @param anchorPoint The new anchor point, expressed in the [0,1] range for each x and y value.
+ 0 corresponds to the min value of the bounds' corresponding axis.
+ 1 corresponds to the max value of the bounds' corresponding axis.
+ */
+public func changeAnchorPointForView(_ view: UIView, anchorPoint: CGPoint) {
+  let newPosition = CGPoint(x: anchorPoint.x * view.layer.bounds.width,
+                            y: anchorPoint.y * view.layer.bounds.height)
+
+  let positionInSuperview = view.convert(newPosition, to: view.superview)
+
+  view.layer.anchorPoint = anchorPoint
+  view.layer.position = positionInSuperview
 }

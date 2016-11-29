@@ -26,32 +26,22 @@ final class AnchorPointPerformer: NSObject, Performing {
   }
 
   func addPlan(_ plan: Plan) {
-    guard let plan = plan as? ChangeAnchorPoint else {
-      fatalError("AnchorPointPerformer can only add ChangeAnchorPoint plans.")
+    switch plan {
+    case let plan as ChangeAnchorPoint:
+      changeAnchorPointForView(target, anchorPoint: plan.anchorPoint)
+    case let plan as AdjustsAnchorPoint:
+      plan.gestureRecognizer.addTarget(self, action: #selector(modifyAnchorPoint(using:)))
+    default:
+      assertionFailure("Unhandled plan type: \(plan)")
     }
-
-    let newPosition = CGPoint(x: plan.anchorPoint.x * target.layer.bounds.width,
-                              y: plan.anchorPoint.y * target.layer.bounds.height)
-
-    let positionInSuperview = target.convert(newPosition, to: target.superview)
-
-    target.layer.anchorPoint = plan.anchorPoint
-    target.layer.position = positionInSuperview
   }
-}
 
-/**
- Creates and returns a Transaction consisting of a ChangeAnchorPoint plan.
-
- - Parameter gestureRecognizer: Recognizer used to determine touch location
- - Parameter target: The view that will have its anchor point changed
-
- - Returns: A Transaction consisting of a ChangeAnchorPoint plan
- */
-func makeAnchorPointAdjustment(using gestureRecognizer: UIGestureRecognizer, on target: UIView) -> ChangeAnchorPoint {
-  // Determine the new anchor point
-  let locationInView = gestureRecognizer.location(in: target)
-  let anchorPoint = CGPoint(x: locationInView.x / target.bounds.width, y: locationInView.y / target.bounds.height)
-
-  return ChangeAnchorPoint(withAnchorPoint: anchorPoint)
+  func modifyAnchorPoint(using gesture: UIGestureRecognizer) {
+    if gesture.state == .began {
+      let locationInView = gesture.location(in: target)
+      let anchorPoint = CGPoint(x: locationInView.x / target.bounds.width,
+                                y: locationInView.y / target.bounds.height)
+      changeAnchorPointForView(target, anchorPoint: anchorPoint)
+    }
+  }
 }

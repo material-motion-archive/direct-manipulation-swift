@@ -50,6 +50,10 @@ final class DirectlyManipulablePerformer: NSObject, ComposablePerforming {
     emitter.emitPlan(Draggable(withGestureRecognizer: plan.panGestureRecognizer))
     emitter.emitPlan(Pinchable(withGestureRecognizer: plan.pinchGestureRecognizer))
     emitter.emitPlan(Rotatable(withGestureRecognizer: plan.rotationGestureRecognizer))
+
+    gestureRecognizers
+      .map { AdjustsAnchorPoint(withGestureRecognizer: $0) }
+      .forEach { emitter.emitPlan($0) }
   }
 
   var emitter: PlanEmitting!
